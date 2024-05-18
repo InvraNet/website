@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvraNet's Website</title>
+    <meta property="og:site_name" content="Welcome Page" />
+    <meta property="og:title" content="InvraNet's Website" />
+    <meta name="description" content="Get to know InvraNet a little better. [Note: Website is still under works at the moment.]">
+    <meta property="og:description" content="Get to know InvraNet a little better. [Note: Website is still under works at the moment.]" />
+    <meta property="og:image" content="https://opengraph.b-cdn.net/production/documents/3dfce614-91e0-4500-8746-e2d8c03889b9.jpg?token=NMbfFCmINY4KNsWeLpaizI6wINanIMEQqL7PvTr_9R8&height=921&width=1088&expires=33249321551">
+    <meta property="og:image:width"" content="1088">
+    <meta property="og:image:height"" content="921">
+    <meta property="og:url" content="https://invra.net" />
+
+
+    <link rel="stylesheet" href="src/css/theme.css">
+</head>
+<body>
+
+    <header>
+        <h2>InvraNet's Website</h2>
+        <nav>
+            <a href="/">Home</a>
+            <a href="download/">Downloads</a>
+            <a href="about/">About Me</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <h1>Welcome!</h1>
+        <p>Hello, welcome to my website. Have a squiz around!</p>
+        <h1>Recent Videos</h1> <br>
+        <div class="video-grid" id="latestVideos"></div>
+    </main>
+
+    <script>
+        // Function to fetch and display latest YouTube videos
+        function fetchLatestVideos() {
+            // Your YouTube Data API key
+            const apiKey = 'AIzaSyAP-d93ApcU7vA5PZ5FCLZVDESwzEv6HTo';
+            // Your YouTube channel ID
+            const channelId = 'UCl6xerszOF4Fhgabvou2rkw';
+            // Number of videos to fetch
+            const maxResults = 6;
+            // YouTube Data API endpoint URL
+            const apiUrl = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`;
+
+            // Make AJAX request to fetch data from YouTube Data API
+            fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const videosContainer = document.getElementById('latestVideos');
+                data.items.forEach(item => {
+                    const videoTitle = item.snippet.title;
+                    const videoDescription = item.snippet.description;
+                    const videoId = item.id.videoId;
+                    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+                    // Create bento box container
+                    const bentoBox = document.createElement('div');
+                    bentoBox.classList.add('bento-box');
+
+                    // Create video container
+                    const videoContainer = document.createElement('div');
+                    videoContainer.classList.add('video-container');
+                    videoContainer.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
+
+                    // Create video description
+                    const descriptionElement = document.createElement('p');
+                    descriptionElement.innerText = videoDescription;
+
+                    // Append elements to bento box container
+                    bentoBox.appendChild(videoContainer);
+                    bentoBox.appendChild(descriptionElement);
+
+                    // Add event listener to bento box to redirect to video URL
+                    bentoBox.addEventListener('click', () => {
+                        window.location.href = videoUrl;
+                    });
+
+                    // Append bento box to videos container
+                    videosContainer.appendChild(bentoBox);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Call the function to fetch latest videos when the page loads
+        window.onload = fetchLatestVideos;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+body {
+    background-color: #121212; /* Dark background color */
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #212121;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 {
+    margin: 0;
+    color: #FFFFFF;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #BBDEFB; /* Lighter hover color */
+}
+
+main {
+    padding: 20px;
+}
+
+.bento-box {
+    margin: 0 auto;
+    background-color: #212121; /* Dark card background color */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    width: calc(32% - 30px); /* 3 boxes per row with 20px margin */
+    float: left; /* Align boxes horizontally */
+}
+
+.bento-box:nth-child(3n+1) {
+    clear: left; /* Start a new row every third box */
+}
+
+.bento-box:hover {
+    transform: translateY(-5px);
+}
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    border-radius: 10px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+p {
+    color: #FFFFFF; /* Light text color */
+}
+
+main a {
+    color: #4b74f8;
+}
+
+.album-image {
+    width: 100px; /* Adjust width as needed */
+    height: auto;
+    margin-right: 20px;
+    text-decoration: none;
+}
+.track-info {
+    flex-grow: 1;
+    text-decoration: none;
+}
+.track-name {
+    font-size: 20px;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+.album-info,
+.artist-info {
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+}
+
+.song-bento-box {
+    margin: 20px;
+    background-color: #212121;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.download-box ul a {
+    text-decoration: none;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvraNet's Website</title>
+    <meta property="og:site_name" content="About Me" />
+    <meta property="og:title" content="InvraNet's Website" />
+    <meta name="description" content="Get to know me better.">
+    <meta property="og:description" content="Get to know me better." />
+    <meta property="og:image" content="https://opengraph.b-cdn.net/production/documents/3dfce614-91e0-4500-8746-e2d8c03889b9.jpg?token=NMbfFCmINY4KNsWeLpaizI6wINanIMEQqL7PvTr_9R8&height=921&width=1088&expires=33249321551">
+    <meta property="og:image:width" content="900">
+    <meta property="og:image:height" content="900">
+    <meta property="og:url" content="https://invra.net/about/" />
+
+    <link href="src/css/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+<header class='bg-#16161e'>
+    <nav class="bg-gray-16161e border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 hidden lg:block">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <a href="../" class="flex items-center">
+                <img src="../src/meta-icon.jpg" class="mr-3 h-6 sm:h-9" alt="Logo" />
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">InvrANet's wobsat.</span>
+            </a>
+            <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 ml-auto">
+                <li>
+                    <a href="../" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Home</a>
+                </li>   
+                <li>
+                    <a href="../download/" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Downloads</a>
+                </li>
+                <li>
+                    <a href="./" class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">About Me</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="bg-gray-16161e border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 block lg:hidden">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <a href="/" class="flex items-center">
+                <img src="src/meta-icon.jpg" class="mr-3 h-6 sm:h-9" alt="Logo" />
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Downloads</span>
+            </a>
+            <div class="flex items-center lg:order-2">
+                <button id="mobile-menu-toggle" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu">
+                <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 ml-auto">
+                    <li>
+                        <a href="about" class='block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white'>About Me</a>
+                    </li>  
+                    <li>
+                        <a href="/" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Home</a>
+                    </li>
+                    <li>
+                        <a href="download" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Downloads</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.getElementById("mobile-menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", function() {
+            const expanded = menuToggle.getAttribute("aria-expanded") === "true" || false;
+            menuToggle.setAttribute("aria-expanded", !expanded);
+            mobileMenu.classList.toggle("hidden");
+        });
+    });
+</script>
+
+<main class="container mx-auto py-12 px-4">
+    <h1 class="text-3xl font-bold mb-4">Who am I?</h1>
+    <p class="mb-8">Hello, I am Michael. I am living inside of Sydney, Australia. I love technology, and have been interested in Networking. I have gotten back into my coding projects, Runner is one of these projects. A couple other of these projects include this website, and also the creation of the Downloads tab; and soon Projects tab. I would love to look at having some sort of blog/ form at some point on this website too. An update will be given here if any decisions are made by myself.</p>
+
+    <h1 class="text-3xl font-bold mb-4">My Main Computer</h1>
+    <a href="https://www.amazon.com.au/dp/B086MN38Q2" target="_blank" rel="noopener noreferrer">Intel Core i5 10400</a> <br>
+    <a href="https://www.mwave.com.au/product/cooler-master-hyper-h412r-cpu-cooler-ac48016" target="_blank" rel="noopener noreferrer">C.M Hyper H412R CPU Cooler</a> <br>
+    <a href="https://www.amazon.com.au/dp/B0876HPVHX" target="_blank" rel="noopener noreferrer">MSI Z490-A PRO ATX</a> <br>
+    <a href="https://www.mwave.com.au/product/gskill-ripjaws-v-64gb-2x-32gb-ddr4-3200mhz-cl16-desktop-memory-black-ac29335?cfclick=2cfea68a22e6489fb9d9b77b776011dc" target="_blank" rel="noopener noreferrer">G.Skill Ripjaws V 64 GB (2 x 36GB kit) DDR4</a> <br>
+    <a href="https://www.mwave.com.au/product/seagate-st8000dm004-8tb-barracuda-35-sata3-desktop-hard-drive-ac12989" target="_blank" rel="noopener noreferrer">Seagate Barracuda Compute 8 TB 3.5" 5400 RPM</a> <br>
+    <a href="https://www.mwave.com.au/product/wd-blue-sn570-wds500g3b0c-500gb-nvme-m2-pcie-gen3-ssd-ac48402" target="_blank" rel="noopener noreferrer">Western Digital Blue SN570 500GB</a> <br>
+    <a href="https://www.mwave.com.au/product/sapphire-pulse-radeon-rx-6700-xt-gaming-12gb-video-card-ac43103?cfclick=1de60f7e16ce43c19ca784d783747330" target="_blank" rel="noopener noreferrer">Sapphire Pulse Radeon RX 6700 XT</a> <br>
+    <a href="https://www.pny.com/xlr8-geforce-gtx-1660-super-dual-fan" target="_blank" rel="noopener noreferrer">PNY XLR8 G​eforce GTX​ 1660 Supe​r</a> <br>
+    <a href="https://www.jw.com.au/product/nzxt-h510-v2-2021-flow-edition-atx-case-matte-white" target="_blank" rel="noopener noreferrer">NZXT H510 Flow ATX Mid Tower Case</a> <br>
+    <a href="https://www.mwave.com.au/product/gigabyte-ud850gm-850w-80-gold-fully-modular-power-supply-ac54158?cfclick=216cc70705604753a81ee762bfcdf76f" target="_blank" rel="noopener noreferrer">Gigabyte UD850GM 850 W 80+ Gold</a> <br>
+    
+    <h1 class="text-3xl font-bold mb-4">My Networking Equipment</h1>
+    <a href="https://aussiebroadband.com.au">Aussie Broadband (NBN RSP)</a> <br>
+    <a href="https://www.australiancomputertraders.com.au/nbn-hfc-connection-box-arris-touchstone-cm8200b-ca">Arris CM82000(B) NBN Network Termination Device</a> <br>
+    <a href="https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/udm-pro">Ubiquiti Networks UDM-Professional</a> <br>
+    <a href="https://www.tp-link.com/au/business-networking/unmanaged-switch/tl-sg1005p/">Unmanaged TL-SG1005P (TP-Link 5 Port PoE)</a> <br>
+    <a href="https://store.ui.com/us/en/collections/unifi-wifi-flagship-compact/products/u6-lite">Ubiquiti Networks U6-Lite AP</a> <br>
+    <h1 class="text-3xl font-bold mb-4">Music</h1>
+    <p class="mb-8">My favourite artist is Status Quo. I have to say that I have gotten back into EDM, but mostly RNB Dacefloor. Down below is what song I am listening to. Please note if it is stuck for more than 10 minutes it's actually because its showing the last scrobbled song.</p>
+
+    <div class="bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-lg transition duration-300 song-bento-box">
+        <a href="https://www.last.fm/user/InvraNet" target="_blank" rel="noopener noreferrer" class="flex items-center">
+            <img class="album-image" src="" alt="Art">
+            <div class="flex flex-col track-info ml-4">
+                <p class="track-name">Track</p>
+                <p class="album-info">On: Album</p>
+                <p class="artist-info">Made by: Artist</p>
+            </div>
+        </a>
+    </div>
+</main>
+
+        
+        <script>
+          const URI = 'https://ws.audioscrobbler.com/2.0/';
+          const apiKey = 'ba6f4549ff9a84c389ad18a7171b7cbc';
+          const LFM_User = 'InvraNet';
+
+            function fetchNowPlaying() {
+                fetch(`${URI}?method=user.getRecentTracks&user=${LFM_User}&api_key=${apiKey}&format=json&limit=1`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.recenttracks.track[0] === data.recenttracks) {
+
+                        }
+                        const track = data.recenttracks.track[0];
+                        const trackName = track.name;
+                        const artistName = track.artist['#text'];
+                        const albumName = track.album['#text'];
+                        const albumImage = track.image[1]['#text'];
+
+                        document.querySelector('.track-name').textContent = trackName;
+                        document.querySelector('.album-info').textContent = `On: ${albumName}`;
+                        document.querySelector('.artist-info').textContent = `Made by: ${artistName}`;
+                        document.querySelector('.album-image').src = albumImage;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data from Last.fm:', error);
+                        const trackInfoElement = document.querySelector('.song-bento-box');
+                        trackInfoElement.innerHTML = '<p>I must not be listening to a song right now!</p>';
+                    });
+            }
+        
+            fetchNowPlaying();
+            setInterval(fetchNowPlaying, 1000); // Rec- in MS.
+        </script>        
+</body>
+</html>

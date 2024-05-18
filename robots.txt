@@ -1,0 +1,5 @@
+User-agent: * 
+Disallow: /downloads/
+Allow: /
+
+Sitemap: https://invra.net/sitemap.xml
