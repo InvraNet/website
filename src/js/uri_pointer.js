@@ -8,4 +8,3 @@ var links = [
     "https://adoble.com.au"
 ]
 document.getElementById("abc").href = links[Math.floor(Math.random()*links.length)];; 
-console.log("test");
