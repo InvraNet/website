@@ -12,7 +12,7 @@
     <meta property="og:image:width" content="900">
     <meta property="og:image:height" content="900">
     <meta property="og:url" content="https://invra.net/about/" />
-
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="src/css/output.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white font-sans">
@@ -71,19 +71,6 @@
         </div>
     </nav>
 </header>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const menuToggle = document.getElementById("mobile-menu-toggle");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        menuToggle.addEventListener("click", function() {
-            const expanded = menuToggle.getAttribute("aria-expanded") === "true" || false;
-            menuToggle.setAttribute("aria-expanded", !expanded);
-            mobileMenu.classList.toggle("hidden");
-        });
-    });
-</script>
-
 <main class="container mx-auto py-12 px-4">
     <h1 class="text-3xl font-bold mb-4">Who am I?</h1>
     <p class="mb-8">Hello, I am Michael. I am living inside of Morewell, Victoria I love technology, and have been interested in Networking. I have gotten back into my coding projects, Runner is one of these projects. A couple other of these projects include this website, I would love to look at having some sort of blog/ form at some point on this website too. An update will be given here if any decisions are made by myself.</p>
@@ -108,7 +95,7 @@
     <br>
     <h1 class="text-3xl font-bold mb-4">Music</h1>
     <p class="mb-8">My favourite artist is Status Quo. I have to say that I have gotten back into EDM, but mostly DNB Dacefloor. Down below is what song I am listening to. Please note if it is stuck for more than 10 minutes it's actually because its showing the last scrobbled song.</p>
-
+    
     <div class="bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-lg transition duration-300 song-bento-box">
         <a href="https://www.last.fm/user/InvraNet" target="_blank" rel="noopener noreferrer" class="flex items-center">
             <img class="album-image" src="" alt="Art">
@@ -120,38 +107,7 @@
         </a>
     </div>
 </main>  
-    <script>
-        const URI = 'https://ws.audioscrobbler.com/2.0/';
-        const apiKey = 'ba6f4549ff9a84c389ad18a7171b7cbc';
-        const LFM_User = 'InvraNet';
-
-        function fetchNowPlaying() {
-            fetch(`${URI}?method=user.getRecentTracks&user=${LFM_User}&api_key=${apiKey}&format=json&limit=1`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.recenttracks.track[0] === data.recenttracks) {
-
-                    }
-                    const track = data.recenttracks.track[0];
-                    const trackName = track.name;
-                    const artistName = track.artist['#text'];
-                    const albumName = track.album['#text'];
-                    const albumImage = track.image[1]['#text'];
-
-                    document.querySelector('.track-name').textContent = trackName;
-                    document.querySelector('.album-info').textContent = `On: ${albumName}`;
-                    document.querySelector('.artist-info').textContent = `Made by: ${artistName}`;
-                    document.querySelector('.album-image').src = albumImage;
-                })
-                .catch(error => {
-                    console.error('Error fetching data from Last.fm:', error);
-                    const trackInfoElement = document.querySelector('.song-bento-box');
-                    trackInfoElement.innerHTML = '<p>I must not be listening to a song right now!</p>';
-                });
-        }
-
-        fetchNowPlaying();
-        setInterval(fetchNowPlaying, 1000); // Rec- in MS.
-    </script>        
 </body>
+<script src="src/js/last.fmNowScrobbling.js"></script>
+<script src="src/js/openMenu.js"></script>
 </html>

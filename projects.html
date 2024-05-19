@@ -12,7 +12,7 @@
     <meta property="og:image:width" content="900">
     <meta property="og:image:height" content="900">
     <meta property="og:url" content="https://invra.net/about/" />
-
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="src/css/output.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white font-sans">
@@ -71,18 +71,6 @@
         </div>
     </nav>
 </header>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const menuToggle = document.getElementById("mobile-menu-toggle");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        menuToggle.addEventListener("click", function() {
-            const expanded = menuToggle.getAttribute("aria-expanded") === "true" || false;
-            menuToggle.setAttribute("aria-expanded", !expanded);
-            mobileMenu.classList.toggle("hidden");
-        });
-    });
-</script>
 
 <main class="container mx-auto py-12 px-4">
   <h1 class="text-3xl font-bold mb-4">My current projects</h1>
@@ -93,4 +81,5 @@
 </a>
 </main>
 </body>
+<script src="src/js/openMenu.js"></script>
 </html>

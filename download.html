@@ -13,7 +13,6 @@
     <meta property="og:image:width" content="900">
     <meta property="og:image:height" content="900">
     <meta property="og:url" content="https://invra.net" />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'nonce-3f87hf3280' 'nonce-RIFHD893388M'; object-src youtube.com 'nonce-3f87hf3280'; base-uri 'none'; " />
 
     <link href="src/css/output.css" rel="stylesheet">
     <link class="cannonical" href="about">
@@ -75,23 +74,9 @@
         </div>
     </nav>
 </header>
-
-    
-    <script nonce="RIFHD893388M">
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuToggle = document.getElementById("mobile-menu-toggle");
-            const mobileMenu = document.getElementById("mobile-menu");
-
-            menuToggle.addEventListener("click", function() {
-                const expanded = menuToggle.getAttribute("aria-expanded") === "true" || false;
-                menuToggle.setAttribute("aria-expanded", !expanded);
-                mobileMenu.classList.toggle("hidden");
-            });
-        });
-    </script>
-    
     <main class="container mx-auto py-12 px-4">
       <p>This bit of the website is getting worked on.</p>
     </main>
 </body>
+<script src="src/js/openMenu.js"></script>
 </html>
