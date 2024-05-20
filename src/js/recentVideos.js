@@ -1,5 +1,5 @@
 function fetchLatestVideos() {
-    const apiKey = 'AIzaSyCCDard0cfDnYPsJlMeHRV2W4dW_X4q2qE';
+    const apiKey = 'alegra.sj';
     const channelId = 'UCl6xerszOF4Fhgabvou2rkw';
     const maxResults = 6;
     const apiUrl = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`;
