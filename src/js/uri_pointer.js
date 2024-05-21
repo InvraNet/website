@@ -14,6 +14,7 @@ var links = [
     "https://invra.net",
     "https://chat.openai.com/chat",
     "http://hackertyper.net/",
-    "https://theangels.com.au/"
+    "https://theangels.com.au/",
+    "https://careers.afp.gov.au/home"
 ]
 document.getElementById("abc").href = links[Math.floor(Math.random()*links.length)];; 
