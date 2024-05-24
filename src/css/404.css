@@ -17,3 +17,7 @@ p {
     font-size: 25px;
     color: #0341b3;
 }
+ p:hover {
+    color: gray;
+    cursor: all-scroll;
+ }
