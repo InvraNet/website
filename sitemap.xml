@@ -3,23 +3,17 @@
 <url>
   <loc>https://invra.net/</loc>
   <lastmod>2024-05-21T01:38:04+00:00</lastmod>
-  <priority>1.00</priority>
 </url>
 <url>
   <loc>https://invra.net/download</loc>
   <lastmod>2024-05-21T01:38:04+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://invra.net/about</loc>
   <lastmod>2024-05-21T01:38:04+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://invra.net/projects</loc>
   <lastmod>2024-05-21T01:38:04+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
-
-
 </urlset>

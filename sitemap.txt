@@ -1,4 +1,4 @@
-https://invra.net
 https://invra.net/
-https://invra.net/download/
-https://invra.net/about/
+https://invra.net/download
+https://invra.net/about
+https://invra.net/projects
