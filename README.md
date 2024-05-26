@@ -1,9 +1,14 @@
 # Website (Notes for deployment)
+## Dependencies
+* Node - NPX (for Wrangler.)
+* Git
+
 ## Tools used
-* wrangler (dep - npx)
-* VS-Code
-* Brower
+* wrangler
+* Visual Studio Code
+* Browser (e.g Firefox, Arc, Chrome)
 * Python
+* gh
 
 ## Deployment for Testing
 ``python3 -m http.server 80``
