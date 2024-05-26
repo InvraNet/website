@@ -76,28 +76,12 @@
 </header>
 <main class="container mx-auto py-12 px-4">
     <h1 class="text-3xl font-bold mb-4">Welcome!</h1>
-    <style>
-        .wrap-float {
-          overflow: auto;
-          width: 100%;
-        }
-        .wrap-float::after {
-          content: "";
-          clear: both;
-          display: table;
-        }
-        .wrap-float > * {
-          display: block;
-          float: left;
-        }
-        .wrap-float > * {
-          width: 23%;
-        }
-        </style>
         <div class="wrap-float">
-          <p>I am Michael, I live in Morwell, Victoria.</p>
-          <a class="text-gray-500" href="https://invra.net/about">Learn More...</a>
-        </div><br>
+          <div class="wrap-float" style="display: flex; align-items: center;">
+            <p>I am Michael, I live in Morwell, Victoria.</p>
+            <a class="text-gray-500" href="https://invra.net/about" style="margin-left: 10px;">Learn More...</a>
+        </div>
+        <br>
     <h1 class="text-3xl font-bold mb-4">My Videos</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8" id="latestVideos"></div>
 </main>
