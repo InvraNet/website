@@ -44,7 +44,6 @@ function getScrobbling() {
         trackElem.innerHTML = '';
         albumcoverElem.innerHTML = '';
         albumElem.innerHTML = '';
-
         if (relative_time != null) {
             trackElem.textContent = "I am not listening to anything right now.";
             albumcoverElem.style.display = 'none';
