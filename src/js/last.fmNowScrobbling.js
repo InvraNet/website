@@ -44,6 +44,7 @@ function getScrobbling() {
         trackElem.innerHTML = '';
         albumcoverElem.innerHTML = '';
         albumElem.innerHTML = '';
+        albumcoverElem.innerHTML = '';
         if (relative_time != null) {
             trackElem.textContent = "I am not listening to anything right now.";
             albumcoverElem.style.display = 'none';
@@ -53,16 +54,18 @@ function getScrobbling() {
             const trackLinkElem = document.createElement('a');
             const artistLinkElem = document.createElement('a');
             const albumLinkElem = document.createElement('a');
+            const albumcoverLinkElem = document.createElement('a');
+            const userLinkElem = document.createElement('a');
             trackLinkElem.href = trackLink;
             trackLinkElem.target = "_blank";
             trackLinkElem.textContent = `${track}`;
             artistLinkElem.href = artistLink;
             artistLinkElem.target = "_blank";
             artistLinkElem.textContent = `By: ${artist}`;
+            albumcoverLinkElem.target = "_blank";
             albumLinkElem.href = albumLink;
             albumLinkElem.target = "_blank";
             albumLinkElem.textContent = `On: ${album}`;
-            const userLinkElem = document.createElement('a');
             userLinkElem.href = "https://www.last.fm/user/InvraNet";
             userLinkElem.target = "_blank";
             trackElem.appendChild(trackLinkElem);
