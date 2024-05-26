@@ -58,10 +58,10 @@ function getScrobbling() {
             trackLinkElem.textContent = `${track}`;
             artistLinkElem.href = artistLink;
             artistLinkElem.target = "_blank";
-            artistLinkElem.textContent = `${artist}`;
+            artistLinkElem.textContent = `By: ${artist}`;
             albumLinkElem.href = albumLink;
             albumLinkElem.target = "_blank";
-            albumLinkElem.textContent = `${album}`;
+            albumLinkElem.textContent = `On: ${album}`;
             const userLinkElem = document.createElement('a');
             userLinkElem.href = "https://www.last.fm/user/InvraNet";
             userLinkElem.target = "_blank";
