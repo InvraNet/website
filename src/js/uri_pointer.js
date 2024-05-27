@@ -15,6 +15,8 @@ var links = [
     "https://chat.openai.com/chat",
     "http://hackertyper.net/",
     "https://theangels.com.au/",
-    "https://careers.afp.gov.au/home"
+    "https://careers.afp.gov.au/home",
+    "https://google.com",
+    "mailto://support@roblox.com"
 ]
 document.getElementById("abc").href = links[Math.floor(Math.random()*links.length)];; 
