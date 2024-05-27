@@ -1,5 +1,4 @@
 let apiKey;
-
 function getKeys() {
     return fetch('https://invra.net/api/keys.json')
         .then(response => {
@@ -16,7 +15,6 @@ function getKeys() {
             console.error('Error fetching API key:', error);
         });
 }
-
 function getScrobbling() {
     if (!apiKey) {
         return getKeys().then(() => {
@@ -26,7 +24,6 @@ function getScrobbling() {
         return nowPlaying();
     }
 }
-
 function nowPlaying() {
     const LFM_User = 'InvraNet';
     const URI = "https://ws.audioscrobbler.com/2.0/";
@@ -98,10 +95,9 @@ function nowPlaying() {
             }
         })
         .catch(error => {
-            console.error('Error fetching recent tracks:', error);
+        console.error('Error fetching recent tracks:', error);
         });
 }
-
 function relativeTime(time, time_text) {
     const time_now = Math.round(Date.now() / 1000);
     const time_diff = time_now - time;
@@ -120,6 +116,5 @@ function relativeTime(time, time_text) {
         return time_text;
     }
 }
-
 getScrobbling();
 setInterval(getScrobbling, 5000);
