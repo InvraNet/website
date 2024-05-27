@@ -9,14 +9,13 @@ function getKeys() {
         })
         .then(keys => {
             apiKey = keys.lastfm;
-            console.log(apiKey);
         })
         .catch(error => {
             console.error('Error fetching API key:', error);
         });
 }
 function getScrobbling() {
-    if (!apiKey) {
+    if (apiKey == null || apiKey == "underfined") {
         return getKeys().then(() => {
             return nowPlaying();
         });
