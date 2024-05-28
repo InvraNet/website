@@ -30,6 +30,9 @@ module.exports = {
         '9': '2.25rem',
         '10': '2.5rem',
       },
+      rounded: {
+        'full': '9999px' 
+      },
     },
   },
   variants: {
