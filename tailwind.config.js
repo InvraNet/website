@@ -1,8 +1,13 @@
-/** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: ["./*.{html,js}"],
   theme: {
     extend: {
+      colors: {
+        'linkhov': '#d8d8d8',
+        'header': '#16161e',
+      },
       fontSize: {
         '2xl': '1.5rem',
         '3xl': '1.875rem',
@@ -25,7 +30,7 @@ module.exports = {
         '9': '2.25rem',
         '10': '2.5rem',
       },
-    }
+    },
   },
   variants: {
     extend: {
