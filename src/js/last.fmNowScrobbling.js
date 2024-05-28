@@ -40,6 +40,7 @@ function nowPlaying() {
             const dateElem = document.getElementById('date');
             const nowplayingElem = document.getElementById('now-playing');
             const albumcoverElem = document.getElementById('album-cover');
+            const albumcoverLinkElem = document.getElementById('album-cover-link');
             const albumElem = document.getElementById('album');
             const track = last_track.name;
             const trackLink = last_track.url;
@@ -69,15 +70,14 @@ function nowPlaying() {
                 const trackLinkElem = document.createElement('a');
                 const artistLinkElem = document.createElement('a');
                 const albumLinkElem = document.createElement('a');
-                const albumcoverLinkElem = document.createElement('a');
                 const userLinkElem = document.createElement('a');
+                albumcoverLinkElem.href = albumLink;
                 trackLinkElem.href = trackLink;
                 trackLinkElem.target = "_blank";
                 trackLinkElem.textContent = `${track}`;
                 artistLinkElem.href = artistLink;
                 artistLinkElem.target = "_blank";
                 artistLinkElem.textContent = `By: ${artist}`;
-                albumcoverLinkElem.target = "_blank";
                 albumLinkElem.href = albumLink;
                 albumLinkElem.target = "_blank";
                 albumLinkElem.textContent = `On: ${album}`;
