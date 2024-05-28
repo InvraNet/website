@@ -1,3 +1,11 @@
-name = "invranet"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "./"
+name = "invranet"
+
+[env.production]
+name = "invranet"
+bucket = "./"
+exclude = [
+    ".gitignore",
+    "tests/",
+    ]
