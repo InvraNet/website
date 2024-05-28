@@ -33,6 +33,9 @@ module.exports = {
       rounded: {
         'full': '9999px' 
       },
+      animation: {
+        'spin-slow': 'spin 10s linear infinite',
+      },
     },
   },
   variants: {

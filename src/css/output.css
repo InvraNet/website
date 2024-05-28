@@ -681,6 +681,16 @@ video {
   max-width: 1280px;
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 10s linear infinite;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -721,6 +731,10 @@ video {
   border-radius: 0.25rem;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -747,11 +761,6 @@ video {
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-
-.bg-header {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 22 30 / var(--tw-bg-opacity));
 }
 
 .p-2 {
