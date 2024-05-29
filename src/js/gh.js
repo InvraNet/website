@@ -21,15 +21,14 @@ function displayRepos() {
     const reposContainer = document.getElementById('repos-container');
     reposContainer.innerHTML = '';
     const reposList = document.createElement('div');
-    reposList.classList.add();
     reposData.forEach(repo => {
         const repoDescription = repo.description ? repo.description : "No description given";
         const language = repo.language ? repo.language.toLowerCase() : "unknown";
         const repoElem = document.createElement('div');
-        repoElem.classList.add('bg-gray-800', 'rounded-lg', 'p-4', 'shadow-lg', 'mb-3');
+        repoElem.classList.add('inclune-block', 'bg-gray-800', 'rounded-lg', 'p-4', 'shadow-lg', 'mb-3');
         repoElem.innerHTML = `
             <div>
-                <a href="${repo.html_url}" class="block font-semibold text-lg text-primary-500 hover:underline" target="_blank">${repo.name}</a>
+                <a href="${repo.html_url}" class="font-semibold text-lg text-primary-500 hover:underline" target="_blank">${repo.name}</a>
                 <p class="text-gray-400">${repoDescription}</p>
                 <div class="flex justify-between items-center mt-2">
                     <span class="text-gray-500 flex items-center">Language: ${language}</span>
