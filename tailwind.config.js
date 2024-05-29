@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         'linkhov': '#d8d8d8',
         'header': '#16161e',
+        'songinf': '#e0dede',
       },
       fontSize: {
         '2xl': '1.5rem',
