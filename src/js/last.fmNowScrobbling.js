@@ -1,4 +1,5 @@
 let apiKey;
+
 function getKeys() {
     return fetch('https://invra.net/api/keys.json')
         .then(response => {
@@ -14,6 +15,7 @@ function getKeys() {
             console.error('Error fetching API key:', error);
         });
 }
+
 function getScrobbling() {
     if (apiKey == null || apiKey == "underfined") {
         return getKeys().then(() => {
@@ -23,6 +25,7 @@ function getScrobbling() {
         return nowPlaying();
     }
 }
+
 function nowPlaying() {
     const LFM_User = 'InvraNet';
     const URI = "https://ws.audioscrobbler.com/2.0/";
@@ -66,6 +69,8 @@ function nowPlaying() {
                 albumcoverElem.style.display = 'none';
                 artistElem.style.display = 'none';
                 albumElem.style.display = 'none';
+                document.getElementById('on-label').style.display = 'none';
+                document.getElementById('by-label').style.display = 'none';
             } else {
                 const trackLinkElem = document.createElement('a');
                 const artistLinkElem = document.createElement('a');
@@ -77,10 +82,10 @@ function nowPlaying() {
                 trackLinkElem.textContent = `${track}`;
                 artistLinkElem.href = artistLink;
                 artistLinkElem.target = "_blank";
-                artistLinkElem.textContent = `By: ${artist}`;
+                artistLinkElem.textContent = `${artist}`;
                 albumLinkElem.href = albumLink;
                 albumLinkElem.target = "_blank";
-                albumLinkElem.textContent = `On: ${album}`;
+                albumLinkElem.textContent = `${album}`;
                 userLinkElem.href = "https://www.last.fm/user/InvraNet";
                 userLinkElem.target = "_blank";
                 trackElem.appendChild(trackLinkElem);
@@ -91,12 +96,15 @@ function nowPlaying() {
                 artistElem.style.display = 'block';
                 albumElem.style.display = 'block';
                 albumElem.appendChild(albumLinkElem);
+                document.getElementById('on-label').style.display = 'flex';
+                document.getElementById('by-label').style.display = 'flex';
             }
         })
         .catch(error => {
-        console.error('Error fetching recent tracks:', error);
+            console.error('Error fetching recent tracks:', error);
         });
 }
+
 function relativeTime(time, time_text) {
     const time_now = Math.round(Date.now() / 1000);
     const time_diff = time_now - time;
@@ -115,5 +123,6 @@ function relativeTime(time, time_text) {
         return time_text;
     }
 }
+
 getScrobbling();
 setInterval(getScrobbling, 5000);
