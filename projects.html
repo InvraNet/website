@@ -71,15 +71,10 @@
         </div>
     </nav>
 </header>
-
 <main class="container mx-auto py-12 px-4">
-  <h1 class="text-3xl font-bold mb-4">My current projects</h1>
-  <p>This is a list of the current projects I have on GitHub, and current maintaining.</p>
-  <br>
-<a href='https://github.com/InvraNet/macos-installer' target="_blank">
-  <div class="bg-gray-800 p-4 rounded-lg shadow-lg cursor-pointer"><div class="project"></div><h3 class="text-3xl font-thin mb-4">macos-installer</h3><p class="text-white mt-2">This will automate everything needed to install to make macOS a usable OS.</p></div>
-</a>
+    <div id="repos-container" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
 </main>
 </body>
 <script src="src/js/openMenu.js"></script>
+<script src="src/js/gh.js"></script>
 </html>
