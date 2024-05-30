@@ -1,7 +1,7 @@
 let fileData;
 
 function fetchFiles() {
-    return fetch('http://cdndwnld.invra.net/pub/downloadmap.json')
+    return fetch('https://invra.net/api/downloadmap.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');

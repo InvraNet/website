@@ -3,14 +3,14 @@
         "name": "Win10_22H2_English_x64.iso",
         "location": "pub/Windows/Win10_22H2_English_x64.iso",
         "size": "5.7 GB",
-        "on-here": false,
+        "on-here": true,
         "file": true
     },
     {
         "name": "WindowsXP_x64.iso",
         "location": "pub/Windows/WindowsXP_x64.iso",
         "size": "628.2 MB",
-        "on-here": false,
+        "on-here": true,
         "file": true
     }
 ]
