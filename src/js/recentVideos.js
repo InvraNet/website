@@ -36,7 +36,6 @@ function fetchLatestVideos() {
                 descriptionElement.innerText = videoDescription;
                 bentoBox.appendChild(videoContainer);
                 bentoBox.appendChild(descriptionElement);
-                // Use "pointerdown" event instead of "click"
                 bentoBox.addEventListener('pointerdown', () => {
                     window.location.href = videoUrl;
                 });
