@@ -17,7 +17,6 @@ function fetchFiles() {
         });
 }
 
-
 function displayDownloads(children, currentPath = "") {
     const fileContainer = document.getElementById('file-container');
     fileContainer.innerHTML = '';
@@ -59,7 +58,6 @@ function displayDownloads(children, currentPath = "") {
         } else if (item.type === 'directory') {
             itemElem.classList.add('cursor-pointer', 'include-block', 'bg-gray-800', 'rounded-lg', 'p-4', 'shadow-lg', 'mb-3', 'hover::last:text-underline');
             itemElem.addEventListener("click", function() {
-                // Pass the updated current path to the recursive call
                 displayDownloads(item.children, currentPath !== "" ? `${currentPath}/${item.name}` : item.name);
             });
             itemElem.innerHTML = `
