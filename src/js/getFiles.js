@@ -42,7 +42,10 @@ function displayDownloads(children, currentPath = "") {
     children.forEach(item => {
         const itemElem = document.createElement('div');
         if (item.type === 'file') {
-            const fileLocation = `https://cdndwnld.invra.net/pub/${currentPath}/${item.name}`;
+            let fileLocation = `https://cdndwnld.invra.net/pub/${currentPath}/${item.name}`;
+            if (item.internal === false && item.html_exturl) {
+                fileLocation = item.html_exturl;
+            }
             itemElem.classList.add('cursor-pointer', 'include-block', 'bg-gray-800', 'rounded-lg', 'p-4', 'shadow-lg', 'mb-3', 'hover::last:text-underline');
             itemElem.addEventListener("click", function() {
                 window.location.href = fileLocation;
