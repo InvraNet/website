@@ -23,7 +23,7 @@ function displayDownloads() {
     const fileList = document.createElement('div');
     fileData.forEach(file => {
         const fileElem = document.createElement('div');
-        const fileLocation = `http://cdndwnld.invra.net/${file.location}`;
+        const fileLocation = `https://cdndwnld.invra.net/${file.location}`;
         fileElem.classList.add('include-block', 'bg-gray-800', 'rounded-lg', 'p-4', 'shadow-lg', 'mb-3');
         fileElem.innerHTML = `
             <div>
