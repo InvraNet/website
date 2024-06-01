@@ -42,7 +42,7 @@ function displayDownloads(children, currentPath = "") {
     children.forEach(item => {
         const itemElem = document.createElement('div');
         if (item.type === 'file') {
-            let fileLocation = `https://cdndwnld.invra.net/pub/${currentPath}/${item.name}`;
+            let fileLocation = `https://cdndwnld.invra.net/pub/${item.html_pathex}`;
             if (item.internal === false && item.html_exturl) {
                 fileLocation = item.html_exturl;
             }

@@ -10,25 +10,33 @@
           "name": "Win10_22H2_English_x64.iso",
           "type": "file",
           "size": "5.8G",
-	      "internal": true
+          "internal": true,
+          "html_pathex": "Windows/Win10_22H2_English_x64.iso",
+          "html_exturl": null
         },
         {
           "name": "Windows7_x64.iso",
           "type": "file",
           "size": "3.1G",
-	      "internal": true
+          "internal": true,
+          "html_pathex": "Windows/Windows7_x64.iso",
+          "html_exturl": null
         },
         {
           "name": "Windows7_Modern_Drivers_Edition_x64.iso",
           "type": "file",
           "size": "4.3G",
-	      "internal": true
+          "internal": true,
+          "html_pathex": "Windows/Windows7_Modern_Drivers_Edition_x64.iso",
+          "html_exturl": null
         },
 	{
 	  "name": "WindowsXP_x64.iso",
 	  "type": "file",
 	  "size": "600M",
-	  "internal": true
+	  "internal": true,
+    "html_pathex": "Windows/WindowsXP_x64.iso",
+    "html_exturl": null
 	}
       ]
     },
@@ -40,8 +48,18 @@
           "name": "macOS_Catalina_Base.dmg",
           "type": "file",
           "size": "476M",
-	      "internal": true
-        }
+          "internal": true,
+          "html_pathex": "OSX/macOS_Catalina_Base.dmg",
+          "html_exturl": null
+        },
+	{
+	  "name": "MacOS_X_Mavericks_Installer.app",
+	  "type": "file",
+	  "size": "5.34G",
+	  "internal": true,
+    "html_pathex": "OSX/MacOS_X_Mavericks_Installer.app.zip",
+    "html_exturl": null
+	}
       ]
     },
         {
@@ -56,27 +74,35 @@
 		"name": "ventoy-1.0.98-linux.tar.gz",
 		"type": "file",
 		"size": "19M",
-		"internal": true
+		"internal": true,
+    "html_pathex": "Tools/Ventoy/ventoy-1.0.98-linux.tar.gz",
+    "html_exturl": null
 	    },
 	    {
-	    "name": "ventoy-1.0.98-livecd.iso",
-		"type": "file",
-		"size":	"187M",
-		"internal": true
+	    	"name": "ventoy-1.0.98-livecd.iso",
+        "type": "file",
+        "size":	"187M",
+        "internal": true,
+        "html_pathex": "Tools/Ventoy/ventoy-1.0.98-livecd.iso",
+        "html_exturl": null
 	    },
 	    {
-	    "name": "ventoy-1.0.98-windows.zip",
-		"type": "file",
-		"size": "16M",
-		"internal": true
+	    	"name": "ventoy-1.0.98-windows.zip",
+        "type": "file",
+        "size": "16M",
+        "internal": true,
+        "html_pathex": "Tools/Ventoy/ventoy-1.0.98-windows.zip",
+        "html_exturl": null
 	    }
 	  ]
 	},
 	{
-          "name": "dmg2img.exe",
-          "type": "file",
-          "size": "112K",
-	      "internal": true
+	  "name": "dmg2img.exe",
+    "type": "file",
+    "size": "112K",
+	  "internal": true,
+    "html_pathex": "Tools/dmg2img.exe",
+    "html_exturl": null
         }
       ]
     }
