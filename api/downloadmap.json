@@ -1,16 +1,86 @@
-[
+{
+  "name": "root",
+  "type": "directory",
+  "children": [
     {
-        "name": "Win10_22H2_English_x64.iso",
-        "location": "pub/Windows/Win10_22H2_English_x64.iso",
-        "size": "5.7 GB",
-        "on-here": true,
-        "file": true
+      "name": "Windows",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Win10_22H2_English_x64.iso",
+          "type": "file",
+          "size": "5.8G",
+	  "internal": true
+        },
+        {
+          "name": "Windows7_x64.iso",
+          "type": "file",
+          "size": "3.1G",
+	  "internal": true
+        },
+        {
+          "name": "Windows7_Modern_Drivers_Edition_x64.iso",
+          "type": "file",
+          "size": "4.3G",
+	  "internal": true
+        },
+	{
+	  "name": "WindowsXP_x64.iso",
+	  "type": "file",
+	  "size": "600M",
+	  "internal": true
+	}
+      ]
     },
     {
-        "name": "WindowsXP_x64.iso",
-        "location": "pub/Windows/WindowsXP_x64.iso",
-        "size": "628.2 MB",
-        "on-here": true,
-        "file": true
+      "name": "OSX",
+      "type": "directory",
+      "children": [
+        {
+          "name": "macOS_Catalina_Base.dmg",
+          "type": "file",
+          "size": "476M",
+	  "internal": true
+        }
+      ]
+    },
+        {
+      "name": "Tools",
+      "type": "directory",
+      "children": [
+	{
+	  "name": "Ventoy",
+	  "type": "directory",
+	  "children": [
+	    {
+		"name": "ventoy-1.0.98-linux.tar.gz",
+		"type": "file",
+		"size": "19M",
+		"internal": true
+	    },
+	    {
+	    	"name": "ventoy-1.0.98-livecd.iso",
+		"type": "file",
+		"size":	"187M",
+		"internal": true
+	    },
+	    {
+	    	"name": "ventoy-1.0.98-windows.zip",
+		"type": "file",
+		"size": "16M",
+		"internal": true
+	    }
+	  ]
+	},
+	{
+          
+	  "name": "dmg2img.exe",
+          "type": "file",
+          "size": "112K",
+	  "internal": true
+        }
+      ]
     }
-]
+  ]
+}
+
