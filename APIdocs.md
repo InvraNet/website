@@ -149,7 +149,6 @@ function displayDownloads(children, currentPath = "") {
         }
         fileList.appendChild(itemElem);
     });
-    
     fileContainer.appendChild(fileList);
 }
 ```
