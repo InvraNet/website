@@ -1,21 +1,19 @@
 # API Implementation for cdndwnld.invra.net
 
-## How to Start with Implementing a File Structure on Your Website
-
-### Endpoint
+## Endpoint
 The file system which the website will be reading is constructed using JSON. If you have no clue how to use JSON, please refer below or find some documentation on using a constructed dataset with arrays in JSON.
 
-#### **Authentication**
+### **Authentication**
 At this point in time, we will not have any sort of authentication system. There is discussion to add Key authentication. Please, before this goes into effect, understand how to store API or Data keys safely.
 
-#### **Request**
+### **Request**
 
 ```HTTP
 GET /pub
 ```
 This will be a GET request to https://corsproxy.io/?https%3A%2F%2Fservice.api.cdndwnld.invra.net.
 
-#### **Example Response**
+### **Example Response**
  ```JSON
 {
   "name": "root",
@@ -70,7 +68,7 @@ In JavaScript, an example of this would be:
 ```JS
  let fileUrl = `https://cdndwnld.invra.net/pub/${currentPath}/${item.name}`;
 ```
- #### External
+ ### External
 Your URL here will be decided based on what present data there is for the file. Of course, you will have an exception, so in this case, if `internal === false && html_exturl`, then we will be using the data from `html_exturl`.
 In JavaScript, this will look like:
 ```JS
@@ -80,7 +78,7 @@ In JavaScript, this will look like:
 ```
 Note: `item` is how I've decided to construct the data.
 
-### Constructing a Frontend for the User
+## Constructing a Frontend for the User
 From here on out, the example will be in JavaScript. You can figure out how to deal with JSON data after fetching the JSON with your programming language's documentation. 
 What you have the ability to do with this API is make it your own. You just have to pull the data and then construct it in the way you want. 
 An example of how we can do a frontend is with DIV tags and A tags.
@@ -153,42 +151,42 @@ This system above is done entirely statically, so it will always be at https://i
 All you need to fetch is `https://corsproxy.io/?https%3A%2F%2Fservice.api.cdndwnld.invra.net/pub`. 
 This function, `displayDownloads`, is responsible for populating a file container element on a web page with a list of downloadable files and directories. Let's break down each part of the function:
 
-#### Parameters 
+### Parameters 
    - `children`: Represents an array of objects containing information about files and directories.
    - `currentPath` (optional): Represents the current path in the file system. Defaults to an empty string if not provided.
 
-#### Accessing the DOM Element
+### Accessing the DOM Element
    - `fileContainer`: Retrieves the DOM element with the id 'file-container', which presumably serves as the container for the list of files and directories.
    - `fileContainer.innerHTML = ''`: Clears the contents of the file container to prepare for updating it with new files and directories.
 
-#### Creating a File List Container
+### Creating a File List Container
    - `fileList`: Creates a new `<div>` element to serve as a container for the list of files and directories.
 
-#### Adding a "Go Up" Option
+### Adding a "Go Up" Option
    - Checks if there is a `currentPath` and it's not the root directory ("/").
    - If true, creates a clickable element (`upLevelElem`) that, when clicked, navigates to the parent directory.
    - Appends this element to the `fileList`.
 
-#### Iterating Through Children
+### Iterating Through Children
    - Loops through each item in the `children` array.
    - Creates a new `<div>` element (`itemElem`) for each item.
 
-#### Handling Files
+### Handling Files
    - If the item is a file:
      - Constructs the file's location based on the `currentPath` and the file's name.
      - If the file is an external link, it overrides the location with the provided external URL.
      - Adds an event listener to the `itemElem` so that when clicked, it redirects the user to the file location.
      - Appends information about the file (name and size) to the `itemElem`.
 
-#### Handling Directories
+### Handling Directories
    - If the item is a directory:
      - Adds an event listener to the `itemElem` so that when clicked, it recursively calls `displayDownloads` with the children of the directory and updates the `currentPath`.
      - Appends information about the directory (name and a marker indicating it's a folder) to the `itemElem`.
 
-#### Appending Elements
+### Appending Elements
    - Appends each `itemElem` (file or directory) to the `fileList`.
 
-#### Updating the DOM
+### Updating the DOM
    - Appends the `fileList` containing all the files and directories to the `fileContainer`, updating the DOM with the new content.
 
 ## Example on what this will look like.
