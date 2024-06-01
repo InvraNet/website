@@ -27,13 +27,17 @@ This will be a GET request to https://corsproxy.io/?https%3A%2F%2Fservice.api.cd
           "name": "Win10_22H2_English_x64.iso",
           "type": "file",
           "size": "5.8G",
-	      "internal": true
+	      "internal": true,
+          "html_pathex": "Windows/Win10_22H2_English_x64.iso",
+          "html_exturl": null
         },
         {
           "name": "Windows7_x64.iso",
           "type": "file",
           "size": "3.1G",
-	      "internal": true
+	      "internal": true,
+          "html_pathex": "Windows/Windows7_x64.iso",
+          "html_exturl": null
         }
       ]
     },
@@ -45,7 +49,9 @@ This will be a GET request to https://corsproxy.io/?https%3A%2F%2Fservice.api.cd
           "name": "macOS_Catalina_Base.dmg",
           "type": "file",
           "size": "476M",
-	      "internal": true
+	      "internal": true,
+          "html_pathex": "OSX/macOS_Catalina_Base.dmg",
+          "html_exturl": null
         }
       ]
     }
@@ -59,14 +65,15 @@ This will be a GET request to https://corsproxy.io/?https%3A%2F%2Fservice.api.cd
 - `type`: This is used to tell your script if it's a folder or a file.
 - `size`: This is used for frontend use only. It indicates the amount of space the file takes up on the disk. For example: `4.6G (GiB)`.
 - `internal`: This is to tell the website whether to check our CDN or someone else's.
-- `html_exturl`: This refers to the HTML's external URL. So, if `internal` is equal to `false`, then we will use `html_exturl`.
+- ``html_pathex``: This is what is used to construct the URL. An example of this being used is below in the next section.
+- `html_exturl`: This refers to if the file is directly on the CDN or downloaded via an external URL. So, if `internal` is equal to `false`, use ``html_exturl`` for the URL. ``html_exturl`` is present on the database at all times, just when ``internal`` is equal to ``true`` it will be ``null``.
 
  ### Managing CDN URL
  #### Internal
 Your URL will be a string composed of two variables: the path the user is in and the filename.
 In JavaScript, an example of this would be:
 ```JS
- let fileUrl = `https://cdndwnld.invra.net/pub/${currentPath}/${item.name}`;
+ let fileUrl = `https://cdndwnld.invra.net/pub/${item.html_pathex}`;
 ```
  ### External
 Your URL here will be decided based on what present data there is for the file. Of course, you will have an exception, so in this case, if `internal === false && html_exturl`, then we will be using the data from `html_exturl`.
@@ -110,7 +117,7 @@ function displayDownloads(children, currentPath = "") {
     children.forEach(item => {
         const itemElem = document.createElement('div');
         if (item.type === 'file') {
-            let fileLocation = `https://cdndwnld.invra.net/pub/${currentPath}/${item.name}`;
+            let fileLocation = `https://cdndwnld.invra.net/pub/${html_pathex}`;
             if (item.internal === false && item.html_exturl) {
                 fileLocation = item.html_exturl;
             }
