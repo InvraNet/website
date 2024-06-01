@@ -10,19 +10,19 @@
           "name": "Win10_22H2_English_x64.iso",
           "type": "file",
           "size": "5.8G",
-	  "internal": true
+	      "internal": true
         },
         {
           "name": "Windows7_x64.iso",
           "type": "file",
           "size": "3.1G",
-	  "internal": true
+	      "internal": true
         },
         {
           "name": "Windows7_Modern_Drivers_Edition_x64.iso",
           "type": "file",
           "size": "4.3G",
-	  "internal": true
+	      "internal": true
         },
 	{
 	  "name": "WindowsXP_x64.iso",
@@ -40,7 +40,7 @@
           "name": "macOS_Catalina_Base.dmg",
           "type": "file",
           "size": "476M",
-	  "internal": true
+	      "internal": true
         }
       ]
     },
@@ -59,13 +59,13 @@
 		"internal": true
 	    },
 	    {
-	    	"name": "ventoy-1.0.98-livecd.iso",
+	    "name": "ventoy-1.0.98-livecd.iso",
 		"type": "file",
 		"size":	"187M",
 		"internal": true
 	    },
 	    {
-	    	"name": "ventoy-1.0.98-windows.zip",
+	    "name": "ventoy-1.0.98-windows.zip",
 		"type": "file",
 		"size": "16M",
 		"internal": true
@@ -73,11 +73,10 @@
 	  ]
 	},
 	{
-          
-	  "name": "dmg2img.exe",
+          "name": "dmg2img.exe",
           "type": "file",
           "size": "112K",
-	  "internal": true
+	      "internal": true
         }
       ]
     }
