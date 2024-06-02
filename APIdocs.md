@@ -68,15 +68,15 @@ This will be a GET request to https://corsproxy.io/?https%3A%2F%2Fservice.api.cd
 - ``html_pathex``: This is what is used to construct the URL. An example of this being used is below in the next section.
 - `html_exturl`: This refers to if the file is directly on the CDN or downloaded via an external URL. So, if `internal` is equal to `false`, use ``html_exturl`` for the URL. ``html_exturl`` is present on the database at all times, just when ``internal`` is equal to ``true`` it will be ``null``.
 
- ### Managing CDN URL
- #### Internal
+ ## Managing CDN URL
+ ### Internal
 Your URL will be a string composed of two variables: the path the user is in and the filename.
 In JavaScript, an example of this would be:
 ```JS
  let fileUrl = `https://cdndwnld.invra.net/pub/${item.html_pathex}`;
 ```
- ### External
-Your URL here will be decided based on what present data there is for the file. Of course, you will have an exception, so in this case, if `internal === false && html_exturl`, then we will be using the data from `html_exturl`.
+ #### External
+Yor URL here will be decided based on what present data there is for the file. Of course, you will have an exception, so in this case, if `internal === false && html_exturl`, then we will be using the data from `html_exturl`.
 In JavaScript, this will look like:
 ```JS
     if (item.internal === false && item.html_exturl) {
