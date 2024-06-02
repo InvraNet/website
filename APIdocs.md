@@ -27,7 +27,7 @@ This will be a GET request to https://corsproxy.io/?https%3A%2F%2Fservice.api.cd
           "name": "Win10_22H2_English_x64.iso",
           "type": "file",
           "size": "5.8G",
-	        "internal": true,
+	      "internal": true,
           "html_pathex": "Windows/Win10_22H2_English_x64.iso",
           "html_exturl": null
         },
@@ -35,7 +35,7 @@ This will be a GET request to https://corsproxy.io/?https%3A%2F%2Fservice.api.cd
           "name": "Windows7_x64.iso",
           "type": "file",
           "size": "3.1G",
-	        "internal": true,
+	      "internal": true,
           "html_pathex": "Windows/Windows7_x64.iso",
           "html_exturl": null
         }
@@ -49,7 +49,7 @@ This will be a GET request to https://corsproxy.io/?https%3A%2F%2Fservice.api.cd
           "name": "macOS_Catalina_Base.dmg",
           "type": "file",
           "size": "476M",
-	        "internal": true,
+	      "internal": true,
           "html_pathex": "OSX/macOS_Catalina_Base.dmg",
           "html_exturl": null
         }
