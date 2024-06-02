@@ -67,7 +67,7 @@ function displayDownloads(children, currentPath = "") {
                 <div class="group">
                     <div class="flex justify-between items-center">
                         <p id="name" class="font-semibold text-lg text-primary-500">${item.name}</p>
-                        <span class="text-gray-500">[Folder]</span>
+                        <span class="text-gray-500">-</span>
                     </div>
                 </div>
             `;
