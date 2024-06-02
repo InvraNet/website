@@ -37,6 +37,10 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 10s linear infinite',
       },
+      opacity: {
+        '75': '.75',
+        '20': '.20',
+      },
     },
   },
   variants: {
