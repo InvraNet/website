@@ -1,48 +1,64 @@
-function fetchLatestVideos() {
-    fetch('https://invra.net/api/keys.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to fetch API keys');
-            }
-            return response.json();
-        })
-        .then(keys => {
-            const apiKey = keys.google;
-            const channelId = 'UCl6xerszOF4Fhgabvou2rkw';
-            const maxResults = 6;
-            const apiUrl = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`;
-            return fetch(apiUrl);
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to fetch latest videos');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const videosContainer = document.getElementById('latestVideos');
-            data.items.forEach(item => {
-                const videoTitle = item.snippet.title;
-                const videoDescription = item.snippet.description;
-                const videoId = item.id.videoId;
-                const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-                const bentoBox = document.createElement('div');
-                bentoBox.classList.add('bg-gray-800', 'p-4', 'rounded-lg', 'shadow-lg', 'cursor-pointer');
-                const videoContainer = document.createElement('div');
-                videoContainer.classList.add('video-container');
-                videoContainer.innerHTML = `<iframe width="100%" height="200%" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
-                const descriptionElement = document.createElement('p');
-                descriptionElement.classList.add('text-white', 'mt-2');
-                descriptionElement.innerText = videoDescription;
-                bentoBox.appendChild(videoContainer);
-                bentoBox.appendChild(descriptionElement);
-                bentoBox.addEventListener('pointerdown', () => {
-                    window.location.href = videoUrl;
-                });
-                videosContainer.appendChild(bentoBox);
-            });
-        })
-        .catch(error => console.error('Error fetching data:', error));
+let youtubeData;
+let apiKey;
+
+async function getKeys() {
+    try {
+        const response = await fetch('https://invra.net/api/keys.json');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const keys = await response.json();
+        apiKey = keys.google;
+    } catch (error) {
+        console.error('Error fetching API key:', error);
+    }
 }
 
-window.onload = fetchLatestVideos;
+async function fetchYouTubeData() {
+    await getKeys();
+    if (!apiKey) {
+        console.error('API key not available');
+        return;
+    }
+
+    try {
+        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=UCl6xerszOF4Fhgabvou2rkw&part=snippet,id&order=date&maxResults=6`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        youtubeData = await response.json();
+        displayVideos();
+    } catch (error) {
+        console.error('Error fetching YouTube data:', error);
+    }
+}
+
+function displayVideos() {
+    const videosContainer = document.getElementById('videos-container');
+    videosContainer.innerHTML = '';
+    youtubeData.items.forEach(video => {
+        const videoTitle = video.snippet.title;
+        const videoDescription = video.snippet.description ? video.snippet.description : "No description given";
+        const videoId = video.id.videoId;
+        const thumbnailUrl = video.snippet.thumbnails.medium.url;
+        const videoElem = document.createElement('div');
+        videoElem.classList.add('video-block', 'bg-gray-800', 'rounded-lg', 'p-4', 'shadow-lg');
+        videoElem.innerHTML = `
+        <div>
+        <a href='https://www.youtube.com/watch?v=${videoId}' target="_blank">
+            <div>
+            <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="font-semibold text-lg text-primary-500 hover:underline">${videoTitle}</a>
+                <p class="text-gray-400">${videoDescription}</p>
+                <div class="flex content-center items-center mt-4">
+                    <img src="${thumbnailUrl}" alt="Video Thumbnail" class="w-48 h-auto">
+                </div>
+            </div>
+        </a>
+    </div>    
+        `;
+        videosContainer.appendChild(videoElem);
+    });
+}
+
+
+fetchYouTubeData();
