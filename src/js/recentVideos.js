@@ -49,8 +49,8 @@ function displayVideos() {
             <div>
             <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="font-semibold text-lg text-primary-500 hover:underline">${videoTitle}</a>
                 <p class="text-gray-400">${videoDescription}</p>
-                <div class="flex content-center items-center mt-4">
-                    <img src="${thumbnailUrl}" alt="Video Thumbnail" class="w-48 h-auto">
+                <div class="flex h-screen w-full bg-blue-400 justify-center items-center mt-4">
+                    <img src="${thumbnailUrl}" alt="Video Thumbnail" class="mx-auto w-48">
                 </div>
             </div>
         </a>
