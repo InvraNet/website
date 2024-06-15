@@ -1,7 +1,7 @@
 let fileData;
 
 function fetchFiles() {
-    return fetch('https://corsproxy.io/?https%3A%2F%2Fservice.api.cdndwnld.invra.net/pub')
+    return fetch('https://api.cdndwnld.invra.net/v2/pub')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
