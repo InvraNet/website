@@ -1,7 +1,7 @@
 let apiKey;
 
 function getKeys() {
-    return fetch('https://invra.net/api/keys.json')
+    return fetch('https://api.cdndwnld.invra.net/v2/keys')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
