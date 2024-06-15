@@ -6,24 +6,18 @@ const path = require('path');
 const app = express();
 const port = 8059;
 
-const allowedHostname = 'invra.net';
-const getClientIP = (req) => {
-    let ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    if (ipAddress.includes(',')) {
-        ipAddress = ipAddress.split(',')[0];
-    }
-    return ipAddress;
-};
+const allowedOrigins = ['https://invra.net'];
 
 const allowOnlyCertainRequests = (req, res, next) => {
-    const clientIP = getClientIP(req);
-    const clientHostname = req.hostname.toLowerCase();
-    if (clientHostname === allowedHostname) {
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+        res.header('Access-Control-Allow-Origin', origin);
         next();
     } else {
         res.status(403).sendFile(path.join(__dirname, 'www', '403.html'));
     }
 };
+
 
 app.use(cors());
 app.set('trust proxy', true);
