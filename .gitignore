@@ -6,3 +6,4 @@ api/keys.json
 .wranglerignore
 postcss.config.js
 .Next/
+proxy/api/
