@@ -79,3 +79,4 @@ function displayDownloads(children, currentPath = "") {
 }
 
 fetchFiles("");
+window.alert("We're changing the proxy over to on server demand. We will be back soon");
