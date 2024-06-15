@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 const port = 8059;
 
-const allowedOrigins = ['https://invra.net'];
+const allowedOrigins = ['https://invra.net', 'http://127.0.0.1:3000'];
 
 const allowOnlyCertainRequests = (req, res, next) => {
     const origin = req.headers.origin;
@@ -17,7 +17,6 @@ const allowOnlyCertainRequests = (req, res, next) => {
         res.status(403).sendFile(path.join(__dirname, 'www', '403.html'));
     }
 };
-
 
 app.use(cors());
 app.set('trust proxy', true);
