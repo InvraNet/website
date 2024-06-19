@@ -154,7 +154,7 @@ function displayDownloads(children, currentPath = "") {
 ```
 
 This system above is done entirely statically, so it will always be at https://invra.net/download. This can make site-mapping way easier. 
-All you need to fetch is `https://corsproxy.io/?https%3A%2F%2Fservice.api.cdndwnld.invra.net/pub`. 
+All you need to fetch is `https://api.cdndwnld.invra.net/v2/pub`. 
 This function, `displayDownloads`, is responsible for populating a file container element on a web page with a list of downloadable files and directories. Let's break down each part of the function:
 
 ### Parameters 
