@@ -1,4 +1,144 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "reset.css";
+@import "projects.css";
 
+::root, * {
+    box-sizing: border-box;
+    font-family: "Ubuntu Sans", sans-serif;
+}
+
+body {
+    background-color: rgb(30,30,30);
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index:9999999;
+    color: rgb(245,245,245);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(25,25,25);
+}
+
+#header-left a {
+    display: flex;
+    align-items: center;
+}
+
+#header-left a h1 {
+    margin-left: 15px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#header-left img {
+    height: 35px;
+}
+
+#header-right {
+    display: flex;
+    align-items: center;
+}
+
+#header-right a {
+    transition: color 0.25s ease-in-out;
+    margin-right: 10px;
+}
+
+.nonActiveLink {
+    cursor: pointer;
+    color: rgb(242, 242, 242);
+}
+
+#header-right a:hover {
+    color: rgb(215, 0, 255);
+}
+
+.activeLink {
+    cursor: default;
+    color: rgb(126, 4, 148);
+}
+
+#textWrap {
+    display: flex;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 550;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 550;
+}
+
+main {
+    overflow: hidden;
+    color: rgb(255,245,245);
+    background-color: rgb(30,30,30);
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+
+#videos-container {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.videoElem {
+    padding: 25px;
+    height: 350px;
+    width: 500px;
+    background-color: rgb(40,40,40);
+    margin: 10px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.videoElem button {
+    width: 120px;
+    height: 40px;
+    background-color: rgb(206, 0, 215);
+}
+
+#cardBottomMount {
+    margin-top: auto;
+}
+
+.link {
+    transition: color 0.25s ease-in-out;
+    margin-left: 5px;
+}
+
+.link:hover {
+    color: rgb(215, 0, 255);
+}
+
+.seperate {
+    margin-top: 15px;
+}
+
+.indent1 {
+    margin-left: 15px;
+}
+
+.indent2 {
+    margin-left: 25px;
+}
+
+.bypassFlex {
+    display: inline-block;
+}

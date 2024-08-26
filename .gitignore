@@ -7,3 +7,4 @@ api/keys.json
 postcss.config.js
 .Next/
 proxy/api/
+.vs/

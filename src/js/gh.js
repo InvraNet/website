@@ -25,14 +25,14 @@ function displayRepos() {
         const repoDescription = repo.description ? repo.description : "No description given";
         const language = repo.language ? repo.language.toLowerCase() : "unknown";
         const repoElem = document.createElement('div');
-        repoElem.classList.add('inclune-block', 'bg-gray-800', 'rounded-lg', 'p-4', 'shadow-lg', 'mb-3');
+        repoElem.id = "projectElem";
         repoElem.innerHTML = `
             <div>
-                <a href="${repo.html_url}" class="font-semibold text-lg text-primary-500 hover:underline" target="_blank">${repo.name}</a>
-                <p class="text-gray-400">${repoDescription}</p>
-                <div class="flex justify-between items-center mt-2">
-                    <span class="text-gray-500 flex items-center">Language: ${language}</span>
-                    <span class="text-gray-500">Stars: ${repo.stargazers_count}</span>
+                <a href="${repo.html_url}" target="_blank" class="repoLink">${repo.name}</a>
+                <p>${repoDescription}</p>
+                <div>
+                    <span>Language: ${language}</span>
+                    <span>Stars: ${repo.stargazers_count}</span>
                 </div>
             </div>
         `;

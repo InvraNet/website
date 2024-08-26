@@ -42,19 +42,15 @@ function displayVideos() {
         const videoId = video.id.videoId;
         const thumbnailUrl = video.snippet.thumbnails.medium.url;
         const videoElem = document.createElement('div');
-        videoElem.classList.add('video-block', 'bg-gray-800', 'rounded-lg', 'p-4', 'shadow-lg');
+        videoElem.classList.add("videoElem")
         videoElem.innerHTML = `
-        <div>
-        <a href='https://www.youtube.com/watch?v=${videoId}' target="_blank">
             <div>
-            <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="font-semibold text-lg text-primary-500 hover:underline">${videoTitle}</a>
-                <p class="text-gray-400">${videoDescription}</p>
-                <div class="flex h-screen w-full bg-blue-400 justify-center items-center mt-4">
+                <a class="link" href="https://www.youtube.com/watch?v=${videoId}" target="_blank">${videoTitle}</a>
+                <p>${videoDescription}</p>
+                <div>
                     <img src="${thumbnailUrl}" alt="Video Thumbnail" class="mx-auto w-48">
                 </div>
             </div>
-        </a>
-    </div>    
         `;
         videosContainer.appendChild(videoElem);
     });

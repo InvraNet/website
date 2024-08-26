@@ -12,112 +12,60 @@
     <meta property="og:image:height" content="900">
     <meta property="og:url" content="https://invra.net/about/" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="src/css/output.css" rel="stylesheet">
+    <link href="src/css/main.css" rel="stylesheet">
 </head>
-<header class='bg-#16161e'>
-    <nav class="bg-gray-16161e border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 hidden lg:block">
-        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-            <a href="../" class="flex items-center">
-                <img src="src/meta-icon.jpg" class="mr-3 h-6 sm:h-9" alt="Logo" />
-                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">About Me</span>
-            </a>
-            <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 ml-auto">
-                <li>
-                    <a href="/" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Home</a>
-                </li>   
-                <li>
-                    <a href="download" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Downloads</a>
-                </li>
-                <li>
-                    <a href="about" class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">About Me</a>
-                </li>
-                <li>
-                    <a href="projects" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Projects</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<div id="header">
+    <div id="header-left">
+        <a href="/">
+            <img src="src/meta-icon.jpg" />
+            <h1>InvraNet's Website</h1>
+        </a>
+    </div>
+    <div id="header-right">
+        <a class="nonActiveLink" href="/">Home</a>
+        <a class="nonActiveLink" href="download">Download</a>
+        <a class="activeLink" href="about">About Me</a>
+        <a class="nonActiveLink" href="projects">Projects</a>
+    </div>
+</div>
 
-    <nav class="bg-gray-16161e border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 block lg:hidden">
-        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-            <a href="/" class="flex items-center">
-                <img src="src/meta-icon.jpg" class="mr-3 h-6 sm:h-9" alt="Logo" />
-                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">About Me</span>
-            </a>
-            <div class="flex items-center lg:order-2">
-                <button id="mobile-menu-toggle" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                </button>
-            </div>
-            <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu">
-                <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 ml-auto">
-                    <li>
-                        <a href="about" class='block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white'>About Me</a>
-                    </li>  
-                    <li>
-                        <a href="/" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Home</a>
-                    </li>
-                    <li>
-                        <a href="download" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Downloads</a>
-                    </li>
-                    <li>
-                        <a href="projects" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Projects</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-<body class="bg-gray-900 text-white font-sans">
-<main class="container mx-auto py-12 px-4">
-    <h1 class="text-3xl font-bold mb-3">Who am I?</h1>
-    <p class="mb-4">Hello, I am Michael. I am living inside of Morewell, Victoria I love technology, and have been interested in Networking for a few months now. I have gotten back into programming. A few of these languages I know is C++, C#, JavaScript, and I am trying out Rust. I have a Projects tab which you can look at which has all my current projects which I will be working on.</p>
-    <h1 class="text-3xl font-bold">Devices</h1>
-    <h2 class="text-2xl font-bold mb-1">Work laptop</h2>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://support.apple.com/en-us/111991" target="_blank" rel="noopener noreferrer">MacBook Air Early 2020 (Intel, Non-M chip)</a><br><br>
-    <h2 class="text-2xl font-bold mb-1">Casual laptop</h2>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.asus.com/au/laptops/for-home/vivobook/vivobook-go-14-flip-tp1400/techspec/" target="_blank">ASUSTeK Vivobook TP1400KA</a><br><br>
-    <h2 class="text-2xl font-bold mb-1">Production Machine</h2>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.amazon.com.au/dp/B086MN38Q2" target="_blank" rel="noopener noreferrer">Intel Core i5 10400</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.mwave.com.au/product/cooler-master-hyper-h412r-cpu-cooler-ac48016" target="_blank" rel="noopener noreferrer">C.M Hyper H412R CPU Cooler</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.amazon.com.au/dp/B0876HPVHX" target="_blank" rel="noopener noreferrer">MSI Z490-A PRO ATX</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.mwave.com.au/product/gskill-ripjaws-v-64gb-2x-32gb-ddr4-3200mhz-cl16-desktop-memory-black-ac29335?cfclick=2cfea68a22e6489fb9d9b77b776011dc" target="_blank" rel="noopener noreferrer">G.Skill Ripjaws V 64 GB (2 x 32GB kit) DDR4</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.mwave.com.au/product/seagate-st8000dm004-8tb-barracuda-35-sata3-desktop-hard-drive-ac12989" target="_blank" rel="noopener noreferrer">Seagate Barracuda Compute 8 TB 3.5" 5400 RPM</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.mwave.com.au/product/wd-blue-sn570-wds500g3b0c-500gb-nvme-m2-pcie-gen3-ssd-ac48402" target="_blank" rel="noopener noreferrer">Western Digital Blue SN570 500GB</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.mwave.com.au/product/sapphire-pulse-radeon-rx-6700-xt-gaming-12gb-video-card-ac43103?cfclick=1de60f7e16ce43c19ca784d783747330" target="_blank" rel="noopener noreferrer">Sapphire Pulse Radeon RX 6700 XT</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.pny.com/xlr8-geforce-gtx-1660-super-dual-fan" target="_blank" rel="noopener noreferrer">PNY XLR8 G​eforce GTX​ 1660 Supe​r</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.jw.com.au/product/nzxt-h510-v2-2021-flow-edition-atx-case-matte-white" target="_blank" rel="noopener noreferrer">NZXT H510 Flow ATX Mid Tower Case</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.mwave.com.au/product/gigabyte-ud850gm-850w-80-gold-fully-modular-power-supply-ac54158?cfclick=216cc70705604753a81ee762bfcdf76f" target="_blank" rel="noopener noreferrer">Gigabyte UD850GM 850 W 80+ Gold</a><br><br>
-    <h2 class="text-2xl font-bold mb-1">Networking Equipment</h2>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://aussiebroadband.com.au">Aussie Broadband (An NBN RSP)</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.australiancomputertraders.com.au/nbn-hfc-connection-box-arris-touchstone-cm8200b-ca">Arris CM820B NTD HFC NTD</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/udm-pro">Ubiquiti Networks UDM-Professional</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://www.tp-link.com/au/business-networking/unmanaged-switch/tl-sg1005p/">TP-Link 5 Port PoE (TL-SG1005P)</a><br>
-    <a class="mb-8 hover:underline hover:text-linkhov" href="https://store.ui.com/us/en/collections/unifi-wifi-flagship-compact/products/u6-lite">Ubiquiti Networks U6-Lite AP</a><br><br>
-    <h1 class="text-3xl font-bold mb-1">Music</h1>
-    <p class="mb-8">I like to listen to a lot of artists. My highest scrobbled artist is Status Quo. My favourite genres are Glam Rock, Blues Rock, Pop, Australian Rock, and EDM.</p>
-    <div class="bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-lg transition duration-300 song-bento-box">
-        <div class="flex items-center">
-            <a id="album-cover-link" href="#" target="_blank">
-                <img id="album-cover" class="album-image rounded-full animate-spin-slow" src="" alt="Art">
-            </a>
-            <div class="flex flex-col ml-4">
-                <div class="flex items-center">
-                    <p class="hover:underline mr-2" id="track" class="track-name"></p>
-                </div>
-                <div class="flex items-center" id="by-label" style="display: none;">
-                    <p class="mr-2 text-white">by</p>
-                    <span class="text-gray-400 hover:underline" id="artist" class="artist-info"></span>
-                </div>
-                <div class="flex items-center" id="on-label" style="display: none;">
-                    <p class="mr-2">on</p>
-                    <p class="text-gray-400 hover:underline" id="album"></p>
-                </div>
-            </div>
-        </div>
-    </div>    
-</main> 
+<body>
+    <main>
+        <h1>Who am I</h1>
+        <p>Hello, I am Michael. I am living inside of Morewell, Victoria I love technology, and have been interested in Networking for a few months now. I have gotten back into programming. A few of these languages I know is C++, C#, JavaScript, and I am trying out Rust. I have a Projects tab which you can look at which has all my current projects which I will be working on.</p>
+
+        <h2 class="seperate">My Devices</h2>
+
+        <h3 class="seperate indent1">Work Laptops</h3>
+        <a class="indent2 link" href="https://support.apple.com/en-us/111991" target="_blank">MacBook Air Early 2020 (Intel, Non-M chip)</a><br />
+        <a class="indent2 link" href="https://www.acer.com/au-en/laptops/nitro/nitro-5/pdp/NH.QFHSA.002" target="_blank">Acer Nitro 5 AN515-58</a><br />
+
+        <h3 class="seperate indent1">Casual Laptops</h3>
+        <a class="indent2 link" href="https://www.asus.com/au/laptops/for-home/vivobook/vivobook-go-14-flip-tp1400/techspec/" target="_blank">ASUSTeK Vivobook TP1400KA</a>
+
+        <h3 class="seperate indent1">Production Machine</h3>
+        <a class="indent2 link" href="https://www.amazon.com.au/dp/B086MN38Q2" target="_blank">Intel Core i5-10400</a><br />
+        <a class="indent2 link" href="https://www.mwave.com.au/product/cooler-master-hyper-h412r-cpu-cooler-ac48016" target="_blank">C.M Hyper H412R CPU Cooler</a><br />
+        <a class="indent2 link" href="https://www.amazon.com.au/dp/B0876HPVHX" target="_blank">MSI Z490-A PRO ATX</a><br />
+        <a class="indent2 link" href="https://www.mwave.com.au/product/gskill-ripjaws-v-64gb-2x-32gb-ddr4-3200mhz-cl16-desktop-memory-black-ac29335" target="_blank">G.Skill Ripjaws V 64GB (2 x 32GB kit) DDR4</a><br />
+        <a class="indent2 link" href="https://www.mwave.com.au/product/seagate-st8000dm004-8tb-barracuda-35-sata3-desktop-hard-drive-ac12989" target="_blank">Seagate Barracuda Compute 8 TB 3.5" 5400 RPM</a><br />
+        <a class="indent2 link" href="https://www.mwave.com.au/product/wd-blue-sn570-wds500g3b0c-500gb-nvme-m2-pcie-gen3-ssd-ac48402" target="_black">Western Digital Blue SN570 500GB</a><br />
+        <a class="indent2 link" href="https://www.mwave.com.au/product/crucial-p3-2tb-pcie-30-nvme-m2-2280-ssd-ct2000p3ssd8-ac55432" target="_blank">Crucial P3 2TB PCIe 3.0 CT2000P3SSD8</a><br />
+        <a class="indent2 link" href="https://www.mwave.com.au/product/sapphire-pulse-radeon-rx-6700-xt-gaming-12gb-video-card-ac43103?cfclick=1de60f7e16ce43c19ca784d783747330" target="_blank">Sapphire Pulse Radeon RX 6700 XT</a><br />
+        <a class="indent2 link" href="https://www.pny.com/xlr8-geforce-gtx-1660-super-dual-fan" target="_blank">PNY XLR8 G​eforce GTX​ 1660 Supe​r</a><br />
+        <a class="indent2 link" href="https://www.mwave.com.au/product/gigabyte-ud850gm-850w-80-gold-fully-modular-power-supply-ac54158" target="_blank">Gigabyte UD850GM 850 W 80+ Gold</a><br />
+        <a class="indent2 link" href="https://www.jw.com.au/product/deepcool-matrexx-50-argb-tempered-glass-e-atx-computer-case-with-4x-argb-fan" target="_blank">Deepcool MATREXX 50 ADD-RGB 4F ATX</a><br />
+
+        <h2 class="seperate">Networking Equipment</h2>
+        <a class="indent2 link" href="https://aussiebroadband.com.au/" target="_blank">Aussie Broadband (An NBN RSP)</a><br />
+        <a class="indent2 link" href="https://www.australiancomputertraders.com.au/nbn-hfc-connection-box-arris-touchstone-cm8200b-ca" target="_blank">Arris CM820B NTD HFC NTD</a><br />
+        <a class="indent2 link" href="https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/udm-pro" target="_blank">Ubiquiti Networks UniFi Dream Machine Professional</a><br />
+        <a class="indent2 link" href="https://www.tp-link.com/au/business-networking/unmanaged-switch/tl-sg1005p/" target="_blank">TP-Link 5 Port PoE (TL-SG1005P)</a><br />
+        <a class="indent2 link" href="https://store.ui.com/us/en/collections/unifi-wifi-flagship-compact/products/u6-lite" target="_blank">Ubiquiti Networks U6-Lite AP</a>
+
+        <h2 class="seperate">Music</h2>
+        <p>I like to listen to a lot of artists. My highest scrobbled artist is Status Quo. My favourite genres are Glam Rock, Blues Rock, Pop, Australian Rock, and EDM.</p>
+    </main>
 </body>
 <script src="src/js/last.fmNowScrobbling.js"></script>
 <script src="src/js/openMenu.js"></script>

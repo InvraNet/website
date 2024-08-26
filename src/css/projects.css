@@ -1,0 +1,14 @@
+#projectElem {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(40,40,40);
+}
+
+a {
+    transition: color 0.25s ease-in-out;
+}
+
+.repoLink:hover {
+    color: rgb(215, 0, 255);
+}
