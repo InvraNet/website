@@ -24,7 +24,7 @@ export default function About() {
       { brand: 'Western Digital', model: 'Blue SN570', description: '500GB SSD for fast storage.', url: 'https://www.mwave.com.au/product/wd-blue-sn570-wds500g3b0c-500gb-nvme-m2-pcie-gen3-ssd-ac48402' },
       { brand: 'Crucial', model: 'P3', description: '2TB PCIe 3.0 NVMe SSD.', url: 'https://www.mwave.com.au/product/crucial-p3-2tb-pcie-30-nvme-m2-2280-ssd-ct2000p3ssd8-ac55432' },
       { brand: 'Sapphire', model: 'Pulse Radeon RX 6700 XT', description: 'High-performance graphics card for gaming..', url: 'https://www.mwave.com.au/product/sapphire-pulse-radeon-rx-6700-xt-gaming-12gb-video-card-ac43103?cfclick=1de60f7e16ce43c19ca784d783747330' },
-      { brand: 'PNY', model: 'XLR8 GeForce GTX 1660 Super', description: 'Mid-performance graphics card used to pass into VM\'s', url: 'https://www.pny.com/xlr8-geforce-gtx-1660-super-dual-fan' },
+      { brand: 'PNY', model: 'XLR8 GeForce GTX 1660 Super', description: 'Mid-performance graphics card used to pass into VMs', url: 'https://www.pny.com/xlr8-geforce-gtx-1660-super-dual-fan' }
       { brand: 'Gigabyte', model: 'UD850GM', description: '850 W 80+ Gold power supply.', url: 'https://www.mwave.com.au/product/gigabyte-ud850gm-850w-80-gold-fully-modular-power-supply-ac54158' },
       { brand: 'Deepcool', model: 'MATREXX 50 ADD-RGB 4F', description: 'ATX case with RGB lighting.', url: 'https://www.jw.com.au/product/deepcool-matrexx-50-argb-tempered-glass-e-atx-computer-case-with-4x-argb-fan' },
     ],
