@@ -1,21 +1,40 @@
-"use client"
-import { useState } from 'react';
+"use client";
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
+  const handleScroll = () => {
+    if (window.scrollY > 10) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header id="header" className="sticky flex items-center justify-between text-[#ededed] p-3 bg-[#0a0a0a] border-b-[1px] border-[#333333]">
+    <header 
+      id="header" 
+      className={`sticky top-0 z-50 flex items-center justify-between text-[#ededed] p-3 bg-[#0a0a0a] border-b-[1px] border-[#333333] ${scrolled ? 'mt-2' : ''}`}
+    >
       <div className="flex items-center space-x-2">
         <Link href="/" className="flex items-center">
           <Image src="/static/img/meta-icon.jpg" className="rounded-full w-7 h-7" alt="Logo" width={32} height={32} />
-          <span className="font-bold text-xl ml-3  ">InvraNet</span>
+          <span className="font-bold text-xl ml-3">InvraNet</span>
         </Link>
       </div>
 
@@ -40,11 +59,26 @@ const Header = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="absolute top-16 right-4 bg-gray-800 p-4 rounded shadow-md md:hidden">
-          <nav className="flex flex-col space-y-2">
-            <Link className='hover:text-slate-500' href="/about" onClick={toggleMenu}>About</Link>
-            <Link className="hover:text-slate-500" href="/projects" onClick={toggleMenu}>Projects</Link>
-            <Link className="hover:text-slate-500" href="/" onClick={toggleMenu}>Home</Link>
+        <div className="${isMenuOpen ? 'max-h-[99999999px]' : 'max-h-9'} absolute top-0 left-0 bg-[#0a0a0a] w-screen h-screen rounded shadow-md md:hidden">
+          <button className='font-bold text-3xl p-4 after:block after:absolute after:w-6 after:h-1 after:rounded-full after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' onClick={toggleMenu}>
+            &times;
+          </button>
+          <nav className="flex flex-col space-y-2 p-16">
+            <div className='flex items-center mb-4'>
+              <img src="/static/img/meta-icon.jpg" className='h-14 w-14 rounded-full'></img>
+              <h1 className='ml-4 text-3xl font-bold'>InvraNet</h1>
+            </div>
+            <div className='ml-8 flex flex-col gap-6'>
+              <Link className='relative inline-block text-3xl after:block after:absolute after:w-full after:h-1 after:rounded-full after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' href="/" onClick={toggleMenu}>
+                Home &#x3e;
+              </Link>
+              <Link className='relative inline-block text-3xl after:block after:absolute after:w-full after:h-1 after:rounded-full after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' href="/projects" onClick={toggleMenu}>
+                Projects &#x3e;
+              </Link>
+              <Link className='relative inline-block text-3xl after:block after:absolute after:w-full after:h-1 after:rounded-full after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' href="/about" onClick={toggleMenu}>
+                About &#x3e;
+              </Link>
+            </div>
           </nav>
         </div>
       )}
