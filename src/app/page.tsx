@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Header from '../components/Header';
 
 export default function Home() {
-  const [hoveredIcon, setHoveredIcon] = useState(null);
+  const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
 
   const techStack = [
     { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg', alt: 'React' },
