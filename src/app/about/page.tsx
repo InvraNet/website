@@ -54,21 +54,21 @@ export default function About() {
     <div>
       <Header />
       <main className='p-10 flex flex-col'>
-        <h1 className='font-bold text-3xl text-center'>Who Am I?</h1>
+        <h1 className='font-bold text-3xl text-center mb-2'>Who Am I?</h1>
         <p className='text-center'>
           I am Michael, I am 15 years old, and living inside of Parramatta, Sydney. I have an avid passion for Technology. I have been more favourable in the recent while to learn Networking. I am a full-stack developer, but have only been working full-stack for about 1 month. My home page features the main languages I use. Check out my project tab also for more stuff. I have just learnt React and Next.js, so I&apos;m in stages of converting my web-tech all to React where possible, and responsibly.
         </p>
 
         <h1 className='font-bold text-3xl text-center mt-10'>My Devices</h1>
         
-        <div className='inline-flex justify-center p-1 mt-4 rounded-full bg-zinc-800 mx-auto'>
+        <div className='inline-flex justify-center p-1 mt-4 rounded-full bg-slate-200 dark:bg-zinc-800 mx-auto'>
           {tabs.map(tab => (
             <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-3 py-1 rounded-full transition-colors duration-300 
-                ${activeTab === tab ? 'bg-blue-500 text-white' : 'text-gray-200 hover:bg-zinc-600'}`}
-            >
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-3 py-1 rounded-full transition-colors duration-300 
+              ${activeTab === tab ? 'bg-blue-600 dark:bg-blue-500 text-white' : 'dark:text-gray-200 hover:bg-slate-300 dark:hover:bg-zinc-600'}`}
+          >
               {tab}
             </button>
           ))}
@@ -76,21 +76,21 @@ export default function About() {
 
         <div className="mt-4 overflow-x-auto">
           <div className="flex flex-col">
-            <div className="sticky top-1 z-10 bg-zinc-800 rounded-lg shadow-lg select-none">
+            <div className="sticky top-1 z-10 bg-slate-300 dark:bg-zinc-800 rounded-lg shadow-lg select-none">
               <div className="flex mx-2">
-                <div className="flex-1 p-4 text-white">Brand</div>
-                <div className="flex-1 p-4 text-white">Model</div>
-                <div className="flex-1 p-4 text-white">Description</div>
+                <div className="flex-1 p-4 text-black dark:text-white">Brand</div>
+                <div className="flex-1 p-4 text-black dark:text-white">Model</div>
+                <div className="flex-1 p-4 text-black dark:text-white">Description</div>
               </div>
             </div>
-            <div className='mt-3 rounded-lg bg-zinc-900'>
+            <div className='mt-3 rounded-lg bg-slate-200 dark:bg-zinc-900'>
               {deviceDetails[activeTab].map((device, index) => (
                 <a 
                   key={index} 
                   href={device.url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="flex hover:bg-slate-800 hover:rounded-lg items-center m-2"
+                  className="flex hover:bg-slate-300 dark:hover:bg-slate-800 hover:rounded-lg items-center m-2"
                 >
                   <div className="flex-1 p-4">{device.brand}</div>
                   <div className="flex-1 p-4">{device.model}</div>

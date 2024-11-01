@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header 
       id="header" 
-      className={`sticky top-0 z-50 flex items-center justify-between text-[#ededed] p-3 bg-[#0a0a0a] border-b-[1px] border-[#333333] ${scrolled ? 'mt-2' : ''}`}
+      className={`sticky top-0 z-50 flex items-center justify-between text-black dark:!text-[#ededed] p-3 bg-[#ffffff] dark:bg-[#000000] border-b-[1px] dark:border-[#333333] ${scrolled ? 'mt-2' : ''}`}
     >
       <div className="flex items-center space-x-2">
         <Link href="/" className="flex items-center">
@@ -64,7 +64,7 @@ const Header = () => {
             &times;
           </button>
           <nav className="flex flex-col space-y-2 p-16">
-            <div className='flex items-center mb-4'>
+            <div className='flex items-center mb-8'>
               <img src="/static/img/meta-icon.jpg" className='h-14 w-14 rounded-full'></img>
               <h1 className='ml-4 text-3xl font-bold'>InvraNet</h1>
             </div>

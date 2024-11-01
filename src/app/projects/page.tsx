@@ -89,19 +89,19 @@ export default function Projects() {
       <Header />
       <main className='p-10 flex flex-col'>
         <h1 className='font-bold text-3xl text-center'>Project Starboard</h1>
-        <div className='inline-flex justify-center p-1 mt-4 rounded-full bg-zinc-800 mx-auto'>
+        <div className='inline-flex justify-center p-1 mt-4 rounded-full bg-slate-200 dark:bg-zinc-800 mx-auto'>
           {tabs.map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-3 py-1 rounded-full transition-colors duration-300 
-                ${activeTab === tab ? 'bg-blue-500 text-white' : 'text-gray-200 hover:bg-zinc-600'}`}
+                ${activeTab === tab ? 'bg-blue-600 dark:bg-blue-500 text-white' : 'dark:text-gray-200 hover:bg-slate-300 dark:hover:bg-zinc-600'}`}
             >
               {tab}
             </button>
           ))}
         </div>
-        <div className="mt-4 p-8 text-center bg-neutral-900 rounded-lg border-[1px] border-[#333333]">
+        <div className="mt-4 p-8 text-center bg-slate-100 dark:bg-neutral-900 rounded-lg border-[1px] border-slate-200 dark:border-[#333333]">
           {projectDetails[activeTab]}
         </div>
         
@@ -109,7 +109,7 @@ export default function Projects() {
         <p className="text-center">All these projects listed below are sourced from my GitHub profile which are public.</p>
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {repositories.map(repo => (
-            <div key={repo.id} className="mt-4 p-4 text-center bg-neutral-900 rounded-lg border-[1px] border-[#333333] flex flex-col">
+            <div key={repo.id} className="mt-4 p-4 text-center bg-slate-100 dark:bg-neutral-900 rounded-lg border-[1px] border-slate-200 dark:border-[#333333] flex flex-col">
               <h3 className='font-semibold text-lg'>{repo.name}</h3>
               <p className='text-gray-400'>{repo.description || "No description provided."}</p>
               <div className="flex gap-5 mt-5">
@@ -120,7 +120,7 @@ export default function Projects() {
               <div className="mt-auto flex justify-end">
                 <button 
                   onClick={() => kickToSite(repo)}
-                  className='bg-blue-500 p-3 rounded-lg hover:underline mt-5 flex gap-2'>
+                  className='bg-blue-600 text-white dark:text dark:bg-blue-500 p-3 rounded-lg hover:underline mt-5 flex gap-2'>
                   Github
                 </button>
               </div>
@@ -133,9 +133,9 @@ export default function Projects() {
             <button onClick={closeModal} className="absolute top-2 left-2 text-white font-bold text-3xl">
               &times;
             </button>
-            <div className="relative bg-neutral-800 p-4 rounded-lg">
+            <div className="relative bg-slate-100 p-4 rounded-lg">
               <img className="max-w-[80vw] max-h-[80vh] object-contain" src={selectedImage.src} alt={selectedImage.alt} />
-              <p className="text-center text-white font-bold mt-2">{selectedImage.alt}</p>
+              <p className="text-center text-black dark:text-white font-bold mt-2">{selectedImage.alt}</p>
             </div>
           </div>
         )}
