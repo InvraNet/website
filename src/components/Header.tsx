@@ -59,8 +59,8 @@ const Header = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="${isMenuOpen ? 'max-h-[99999999px]' : 'max-h-9'} absolute top-0 left-0 bg-[#0a0a0a] w-screen h-screen rounded shadow-md md:hidden">
-          <button className='font-bold text-3xl p-4 after:block after:absolute after:w-6 after:h-1 after:rounded-full after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' onClick={toggleMenu}>
+        <div className="${isMenuOpen ? 'max-h-[99999999px]' : 'max-h-9'} absolute top-0 left-0 bg-white dark:bg-[#0a0a0a] w-screen h-screen rounded shadow-md md:hidden">
+          <button className='font-bold text-3xl p-4 after:block after:absolute after:w-6 after:h-1 after:rounded-full after:bg-black dark:after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' onClick={toggleMenu}>
             &times;
           </button>
           <nav className="flex flex-col space-y-2 p-16">
@@ -69,13 +69,13 @@ const Header = () => {
               <h1 className='ml-4 text-3xl font-bold'>InvraNet</h1>
             </div>
             <div className='ml-8 flex flex-col gap-6'>
-              <Link className='relative inline-block text-3xl after:block after:absolute after:w-full after:h-1 after:rounded-full after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' href="/" onClick={toggleMenu}>
+              <Link className='relative inline-block text-3xl after:block after:absolute after:w-full after:h-1 after:rounded-full after:bg-black dark:after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' href="/" onClick={toggleMenu}>
                 Home &#x3e;
               </Link>
-              <Link className='relative inline-block text-3xl after:block after:absolute after:w-full after:h-1 after:rounded-full after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' href="/projects" onClick={toggleMenu}>
+              <Link className='relative inline-block text-3xl after:block after:absolute after:w-full after:h-1 after:rounded-full after:bg-black dark:after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' href="/projects" onClick={toggleMenu}>
                 Projects &#x3e;
               </Link>
-              <Link className='relative inline-block text-3xl after:block after:absolute after:w-full after:h-1 after:rounded-full after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' href="/about" onClick={toggleMenu}>
+              <Link className='relative inline-block text-3xl after:block after:absolute after:w-full after:h-1 after:rounded-full after:bg-black dark:after:bg-white after:transition-transform after:duration-300 after:origin-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-left' href="/about" onClick={toggleMenu}>
                 About &#x3e;
               </Link>
             </div>
