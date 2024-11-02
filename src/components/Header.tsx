@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 10) {
+    if (window.scrollY > 50) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header 
       id="header" 
-      className={`sticky top-0 z-50 flex items-center justify-between text-black dark:!text-[#ededed] p-3 bg-[#ffffff] dark:bg-[#000000] border-b-[1px] dark:border-[#333333] ${scrolled ? 'mt-2' : ''}`}
+      className={`sticky top-0 z-50 flex items-center justify-between text-black dark:!text-[#ededed] p-3 bg-[#ffffff] dark:bg-[#000000] border-b-[1px] dark:border-[#333333] ${scrolled ? 'p-5' : ''}`}
     >
       <div className="flex items-center space-x-2">
         <Link href="/" className="flex items-center">
@@ -44,7 +44,7 @@ const Header = () => {
         <Link className='hover:text-slate-500' href="/about">About</Link>
       </nav>
 
-      <div className="md:hidden">
+      <div className="md:hidden flex items-center">
         <button onClick={toggleMenu} className="focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
