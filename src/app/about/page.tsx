@@ -22,6 +22,7 @@ export default function About() {
 
   const deviceDetails: DeviceDetails = {
     'Work Laptops': [
+      { brand: 'Apple', model: 'Macbook Pro', description: 'Late 2024 M4 Pro, with 16GB of RAM, 1TB of storage and a Nano-textured display (Pre-ordered it, to replace my AN515-58)', url: '' },
       { brand: 'Apple', model: 'MacBook Air', description: 'Early 2020, Intel, Non-M chip', url: 'https://support.apple.com/en-us/111991' },
       { brand: 'Acer', model: 'Nitro 5 AN515-58', description: 'Using laptop for work and on-the-side programming.', url: 'https://www.acer.com/au-en/laptops/nitro/nitro-5/pdp/NH.QFHSA.002' }
     ],
@@ -90,7 +91,7 @@ export default function About() {
                   href={device.url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="flex hover:bg-slate-300 dark:hover:bg-slate-800 hover:rounded-lg items-center m-2"
+                  className="flex hover:bg-slate-300 dark:hover:bg-zinc-800 hover:rounded-lg items-center m-2"
                 >
                   <div className="flex-1 p-4">{device.brand}</div>
                   <div className="flex-1 p-4">{device.model}</div>
