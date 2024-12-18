@@ -155,51 +155,51 @@ export default function About() {
         </p>
 
         <h1 className="font-bold text-3xl text-center mt-10">My Devices</h1>
+        <div className="flex flex-col">
+          <div className="inline-flex justify-center p-2 mt-4 bg-zinc-300 backdrop-blur-md bg-opacity-45 dark:bg-zinc-800 rounded-md mx-auto gap-2">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-3 py-1 rounded-md
+                ${
+                  activeTab === tab
+                    ? "bg-purple-400 dark:bg-purple-500 text-white"
+                    : "dark:text-gray-200 hover:bg-slate-300 dark:hover:bg-zinc-600"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
 
-        <div className="inline-flex justify-center p-2 mt-4 rounded-md bg-slate-200 dark:bg-zinc-900 mx-auto gap-2">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-3 py-1 rounded-md
-              ${
-                activeTab === tab
-                  ? "bg-purple-400 dark:bg-purple-500 text-white"
-                  : "dark:text-gray-200 hover:bg-slate-300 dark:hover:bg-zinc-600"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-
-        <div className="mt-4 overflow-x-auto">
-          <div className="flex flex-col">
-            <div className="sticky top-1 z-10 bg-slate-300 dark:bg-zinc-800 rounded-lg shadow-lg select-none">
-              <div className="flex mx-2">
-                <div className="flex-1 p-4 text-black dark:text-white">
-                  Brand
-                </div>
-                <div className="flex-1 p-4 text-black dark:text-white">
-                  Model
-                </div>
-                <div className="flex-1 p-4 text-black dark:text-white">
-                  Description
-                </div>
+          <div className="mt-4 overflow-x-auto bg-zinc-100 dark:bg-neutral-900 border border-zinc-200 dark:border-zinc-800 rounded-md justify-center">
+            <div className="flex flex-col">
+              <div className="flex text-black dark:text-white p-4">
+                <div className="flex-1 font-bold">Brand</div>
+                <div className="flex-1 font-bold">Model</div>
+                <div className="flex-1 font-bold">Description</div>
               </div>
-            </div>
-            <div className="mt-3 rounded-lg bg-slate-200 dark:bg-zinc-900">
-              {deviceDetails[activeTab].map((device, index) => (
+
+              {deviceDetails[activeTab].map((device, index: number) => (
                 <a
                   key={index}
                   href={device.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex hover:bg-slate-300 dark:hover:bg-zinc-800 hover:rounded-lg items-center m-2"
+                  className={`flex hover:bg-slate-300 dark:hover:bg-zinc-800 p-4 ${
+                    index % 2 === 0 ? "bg-zinc-200 dark:bg-[rgb(20,20,20)]" : ""
+                  }`}
                 >
-                  <div className="flex-1 p-4">{device.brand}</div>
-                  <div className="flex-1 p-4">{device.model}</div>
-                  <div className="flex-1 p-4">{device.description}</div>
+                  <div className="flex-1 text-ellipsis overflow-hidden">
+                    {device.brand}
+                  </div>
+                  <div className="flex-1 text-ellipsis overflow-hidden">
+                    {device.model}
+                  </div>
+                  <div className="flex-1 text-ellipsis overflow-hidden">
+                    {device.description}
+                  </div>
                 </a>
               ))}
             </div>
