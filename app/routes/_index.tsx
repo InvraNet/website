@@ -16,11 +16,25 @@ export const loader = async () => {
     { name: "Express", icon: "/img/stack/express.svg" },
   ];
 
-  return json({ techStack });
+  const netStack = [
+    { name: "Ubiquiti", icon: "/img/tech/ui.svg" },
+    { name: "Cisco", icon: "/img/tech/cisco.svg" },
+    { name: "SuperMicro", icon: "/img/tech/supermicro.svg" },
+    { name: "Apple", icon: "/img/tech/apple.svg" },
+    { name: "Windows", icon: "/img/tech/microsoft.svg" },
+    { name: "Arch Linux", icon: "/img/tech/arch.svg" },
+    { name: "TP-Link", icon: "/img/tech/tp-link.svg" },
+    { name: "Docker", icon: "/img/tech/docker.svg" },
+    { name: "MikroTik", icon: "/img/tech/mikrotik.svg" },
+    { name: "Proxmox", icon: "/img/tech/proxmox.svg" },
+    { name: "NixOS", icon: "/img/tech/nixos.svg" },
+  ];
+
+  return json({ techStack, netStack });
 };
 
 export default function Index() {
-  const { techStack } = useLoaderData<typeof loader>();
+  const { techStack, netStack } = useLoaderData<typeof loader>();
 
   return (
     <main>
@@ -59,6 +73,39 @@ export default function Index() {
               aria-hidden="true"
             >
               {techStack.map((item) => (
+                <li key={item.name}>
+                  <div
+                    className="w-[100px] h-[100px]"
+                    style={{ backgroundImage: `url('${item.icon}')` }}
+                  ></div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <h2 className="text-3xl font-semibold mb-2 text-center text-purple-500 dark:text-[rgb(138,43,226)] mt-12">
+            My Network Stack
+          </h2>
+          <p className="text-xl text-center mb-8">
+            Here is the Equipment I know how to use.
+          </p>
+          <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:filter dark:invert">
+            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+              {netStack.map((item) => (
+                <li key={item.name}>
+                  <div
+                    className="w-[100px] h-[100px]"
+                    style={{ backgroundImage: `url('${item.icon}')` }}
+                  ></div>
+                </li>
+              ))}
+            </ul>
+
+            <ul
+              className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+              aria-hidden="true"
+            >
+              {netStack.map((item) => (
                 <li key={item.name}>
                   <div
                     className="w-[100px] h-[100px]"
