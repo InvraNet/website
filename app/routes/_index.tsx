@@ -20,14 +20,14 @@ export const loader = async () => {
     { name: "Ubiquiti", icon: "/img/tech/ui.svg" },
     { name: "Cisco", icon: "/img/tech/cisco.svg" },
     { name: "SuperMicro", icon: "/img/tech/supermicro.svg" },
-    { name: "Apple", icon: "/img/tech/apple.svg" },
-    { name: "Windows", icon: "/img/tech/microsoft.svg" },
-    { name: "Arch Linux", icon: "/img/tech/arch.svg" },
-    { name: "TP-Link", icon: "/img/tech/tp-link.svg" },
-    { name: "Docker", icon: "/img/tech/docker.svg" },
     { name: "MikroTik", icon: "/img/tech/mikrotik.svg" },
+    { name: "Apple", icon: "/img/tech/apple.svg" },
+    { name: "Arch Linux", icon: "/img/tech/arch.svg" },
     { name: "Proxmox", icon: "/img/tech/proxmox.svg" },
     { name: "NixOS", icon: "/img/tech/nixos.svg" },
+    { name: "Windows", icon: "/img/tech/microsoft.svg" },
+    { name: "TP-Link", icon: "/img/tech/tp-link.svg" },
+    { name: "Docker", icon: "/img/tech/docker.svg" },
   ];
 
   return json({ techStack, netStack });
@@ -56,7 +56,7 @@ export default function Index() {
           <p className="text-xl text-center mb-8">
             Here is the frameworks and language I know.
           </p>
-          <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:filter dark:invert">
+          <div className="w-2/3 mx-auto inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:filter dark:invert">
             <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
               {techStack.map((item) => (
                 <li key={item.name}>
@@ -89,7 +89,7 @@ export default function Index() {
           <p className="text-xl text-center mb-8">
             Here is the Equipment I know how to use.
           </p>
-          <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:filter dark:invert">
+          <div className="w-2/3 mx-auto inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:filter dark:invert">
             <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
               {netStack.map((item) => (
                 <li key={item.name}>
